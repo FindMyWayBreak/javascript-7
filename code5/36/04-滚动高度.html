@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body style="height:2000px">
+        <div id="wrap"></div>
+        
+        <script>
+
+            document.onclick = function(){
+
+                //滚动高
+                console.log(document.documentElement.scrollTop);
+                // document.body.scrollTop
+                console.log(document.body.scrollTop);
+
+                //最好这样写去获取页面的滚动高
+                console.log(document.documentElement.scrollTop || document.body.scrollTop);
+
+
+            };
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

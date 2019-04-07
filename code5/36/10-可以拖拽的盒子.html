@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*
+            on mouse down
+            on mouse move
+            on mouse up
+             */
+
+            //使用布尔值检测是否按下
+            /*let ifDown = false;
+
+            document.onmousemove = function(){
+                if(!ifDown)return;
+                console.log("move");
+            };
+
+            document.onmousedown=function(){
+                console.log("down");
+                ifDown = true;
+            };
+
+            document.onmouseup=function () {
+                console.log("up");
+                ifDown = false;
+            };*/
+
+            document.onmousedown = function(){
+                console.log("down");
+                //在donw触发后，才添加move事件
+                document.onmousemove = function(){
+                    console.log("move");
+                };
+            };
+
+            document.onmouseup=function(){
+                console.log("up");
+                document.onmousemove = null;
+            };
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+
+    <script>
+
+        let oWrap = document.getElementById("wrap");
+
+
+        oWrap.onmousedown=function(ev) {
+            //获取鼠标初始位置
+            let sX = ev.clientX;
+            let sY = ev.clientY;
+            //获取按下时，盒子的位置
+            let sLeft = oWrap.offsetLeft;
+            let sTop = oWrap.offsetTop;
+
+            document.onmousemove=function(ev){
+                //获取鼠标当前位置
+                let mX = ev.clientX;
+                let mY = ev.clientY;
+
+                //计算出鼠标位置的变化量
+                let x_ = mX - sX;
+                let y_ = mY - sY;
+
+                //盒子当前的位置 = 盒子按下的位置 + 变化量
+                oWrap.style.left = sLeft + x_ + 'px';
+                oWrap.style.top = sTop + y_ + 'px';
+            };
+
+        };
+        document.onmouseup=function() {
+            this.onmousemove = null;
+        };
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

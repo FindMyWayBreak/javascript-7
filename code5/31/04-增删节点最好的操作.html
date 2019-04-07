@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        阿飞飞
+        <p>gg</p>
+        <p>gg</p>
+        <a href="" id="hh">gg</a>
+    </div>
+
+    <script>
+
+
+        let oW = document.getElementById("wrap");
+        let oP = oW.querySelector("p");
+        oP.onclick = function(){
+            alert( 4 );
+        };
+
+
+        //创建文本节点
+        let text = document.createTextNode("朱雀雀");
+        let oDiv = document.createElement("div");
+
+        //添加
+        oW.appendChild(text);
+        oW.appendChild(oDiv);
+
+        //在某个子元素的前面加
+        //let hh = document.getElementById("hh");
+        //oW.insertBefore(oDiv , hh);//在hh节点之前插入新节点
+
+        //放在子元素第一位
+        // oW.insertBefore(oDiv,oW.children[0]);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
