@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select:none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            #wrap{
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <p>0001</p>
+
+        </div>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            let $wrap = $("#wrap");
+
+            /*$("#wrap p").click(function(e){
+                alert( $(this).index() );
+                e.stopPropagation();
+            });*/
+
+            $wrap.on("click" , "p" , function(e){
+                alert( $(this).index() );
+
+                e.stopPropagation();
+            });
+
+            $(document).click(function(){
+                $wrap.append("<p>ppppp</p>");
+            });
+
+
+
+
+
+
+            /*$(function(){
+
+            });
+
+            $(document).ready(function(){
+
+            });*/
+
+            /*$("#wrap").on("click" , function(){
+                alert( 1 );
+            });*/
+            /*$("#wrap").click(function(){
+                alert( 1 );
+            });
+            $("#wrap").click(function(){
+                alert( 2 );
+            });*/
+
+            /*$("#wrap").on({
+                click : function(ev){
+                    console.log(ev);
+                    console.log(this);
+                    console.log("click");
+                },
+                mouseenter : function(){
+                    console.log("enter");
+                }
+            });*/
+
+            /*$("#wrap").on("click" , function(){
+                alert( 1 );
+            });
+            $("#wrap").click( function(){
+                alert( 2 );
+            });
+
+            $("#wrap").off("click");*/
+
+            /*$("#wrap").on("click.goudan" , function(){
+                alert( 1 );
+            });
+            $("#wrap").on("click.dachui" , function(){
+                alert( 2 );
+            });
+            $("#wrap").off("click.goudan");*/
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

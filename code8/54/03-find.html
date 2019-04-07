@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select:none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div>
+                <p>55</p>
+                <p class="hh">88</p>
+            </div>
+            <ul>
+                <li>44</li>
+            </ul>
+        </div>
+        <p class="hh">99</p>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+
+            let $wrap = $("#wrap");
+
+            console.log( $wrap.find(".hh") );
+            $wrap.find(".hh").css("color" , 'red');
+
+            console.log( $wrap.find("*") );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
