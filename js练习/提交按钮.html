@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="左默妄">
+		<meta name="Keywords" content="模板">
+		<meta name="Description" content="练习模板">
+		<title>Document</title>
+		<style type="text/css">
+		*{
+			list-style-type:none;
+		}
+		ul{
+		width:100px;
+		height:700px;
+		background-color:pink;
+			}
+
+		</style>
+	</head>
+	<body>
+	<!-- <form action=""> --><!--在button提交后会清空ul？不能加上form表单-->
+	<textarea name=""  cols="30" rows="10" id="text"><!--多出一个id"" 两个id="text" 冲突-->
+		</textarea>
+		<br />
+		<button value="提交" id="btn">提交</button>
+	<!-- </form> -->
+		
+		<ul id="ins">
+		
+		</ul>
+		<script type="text/javascript">
+			let oText = document.getElementById("text"),
+				oUl = document.getElementById("ins"),
+				oBtn = document.getElementById("btn");
+				
+			oBtn.onclick = function(){
+			oUl.innerHTML += "<li>"+oText.value+"</li>"+"<br/>"
+			//拼接
+			}
+		</script>
+	</body>
+</html>

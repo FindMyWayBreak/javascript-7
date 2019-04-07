@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Generator" content="EditPlus®">
+		<meta name="Author" content="左默妄">
+		<meta name="Keywords" content="模板">
+		<meta name="Description" content="练习模板">
+		<title>Document</title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+	<div id="box">2<div id="wrap" >1</div></div>
+	<script type="text/javascript">
+		function a(arr){
+			arr.sort();
+
+			for(let i=0;i<arr.length;i++){
+			if(arr[i] === arr[i+1]){
+				arr.splice(i,1);
+				i--;
+			}
+			}
+			return arr;
+		}
+
+		function b(arr){
+			let o ={};
+			var b = [];
+
+			for(let i=0;i<arr.length;i++){
+				o[arr[i]] = undefined;
+			}
+			
+			for(let key in o){
+				b.push(key);
+			}
+			return b;
+		}
+		function c(arr){
+			return arr.filter(function(dom,i,arr){
+			return arr.indexOf(dom) === i;
+		})
+		}
+		
+		console.log(c([1,1]))
+	</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap{
+                border: 1px dashed #999;
+                margin: 20px auto;
+				width:200px;
+				height:800px;
+				/* transform:rotate(90deg); */
+            }
+            #wrap div{
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                color: #000;
+                font-size: 20px;
+                font-weight: bolder;
+                background-color: #abcdef;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <!--<div>4</div>-->
+        </div>
+        <script>
+			let oDiv = document.getElementById("wrap");
+			let num = 13;
+			//定义变量
+			//{i}50px什么意思
+			//数字算式混乱
+			
+				if(num%2 === 0){
+					for(let i = 0;i < num/2;i++){
+						oDiv.innerHTML += `<div style="margin-left:${(num/2-i-1)*50}px">${i}</div>`
+					}
+					for(let i = num/2;i >= num/2 && i<num ;i++){
+						oDiv.innerHTML += `<div style="margin-left:${(i-num/2)*50}px">${i}</div>`
+					}
+					
+				}else{
+					for(let i = 0;i < (num-1)/2;i++){
+						oDiv.innerHTML += `<div style="margin-left:${((num-1)/2-i)*50}px">${i}</div>`
+					}
+					oDiv.innerHTML += `<div style="margin-left:0px">${(num-1)/2}</div>`
+					for(let i = (num+1)/2;i >= (num+1)/2 && i<num ;i++){
+						oDiv.innerHTML += `<div style="margin-left:${(i-(num+1)/2+1)*50}px">${i}</div>`
+					}
+				}
+				
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
