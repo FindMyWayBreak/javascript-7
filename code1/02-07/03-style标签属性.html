@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap{
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap" style="width:100px;">123</div>
+        
+        <script>
+
+            /*
+             * 合法标签属性
+             *    - style 这个属性非常特殊
+             *            一个节点对象的style属性是 存储着这个节点所有行内样式的 对象
+             */
+
+            /*
+            驼峰法:
+                操作复合样式的时候，去掉 - 号，后面的第一个字母大写
+             */
+
+            let oWrap = document.getElementById("wrap");
+
+            console.log( oWrap.style );
+
+            oWrap.style.height = "100px";
+			oWrap.style.width = "200px";
+            oWrap.style.backgroundColor = "pink";
+
+            console.log( typeof oWrap.id );
+            // oWrap.style += "height:100px;background-color:pink"; //不能够这样
+            // oWrap.innerHTML += '456';//oWrap.innerHTML整体所有写入的东西
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap{
+                width:100px;
+                height:100px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="" id="wrap" class="box" title="我是一个DIV">123456</div>
+        
+        <script>
+            //如何去操作元素的标签属性
+
+            /*
+             * 合法的标签属性，直接 . 操作
+             *     - class比较特殊，需要使用className代替操作
+             */
+
+            //写  读
+
+
+            let oDiv = document.getElementById("wrap");//放到改变id后就无法获取
+
+            //oDiv.title = "狗蛋";
+            /*console.log( oDiv.title );
+
+            console.log(oDiv.className);
+
+            oDiv.className = "wrap";
+
+            console.log(oDiv.className);*/
+
+            //console.log(oDiv.id);
+            oDiv.id = "goudan";//！！！改变的是这个属性 而不是改变的节点本身
+			let a = document.getElementById("goudan");
+            // console.log(oDiv.className);
+			console.log(oDiv.id);
+			console.log(a.id);
+			
+
+
+            let xx = document.getElementById("goudan");
+            console.log( xx === oDiv );
+
+            oDiv.innerHTML = "1";//
+			xx.innerHTML += "987654321";
+
+
+            /*let x = {
+                name : "阿飞"
+            };
+
+            x.name;
+            x.age = 18;*/
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap" afei="789" pp></div>
+        
+        <script>
+
+            /*
+            * 自定义的标签属性：
+            *   - getAttribute()
+            *   - setAttribute()
+            *   - removeAttribute()
+            *console.log只会打印出行内样式，但显示不出添加的东西，添加东西在html中显示
+            * 这仨不仅仅可以操作自定义标签属性，还可以操作合法标签属性，
+            * 但是我们一般不会用他们来操作合法标签属性
+             */
+
+            let oWrap = document.getElementById("wrap");
+
+            console.dir(oWrap);
+            oWrap.afei = "456";//自定义标签属性
+            console.log( oWrap.afei );
+
+            //获取自定义标签属性
+            console.log( oWrap.getAttribute("afei") );
+
+            //设置自定义标签属性
+            oWrap.setAttribute("afei" , "1");
+            oWrap.setAttribute("ahuque" , "123")
+			console.log( oWrap.afei );
+
+            //移除
+            // oWrap.removeAttribute("afei");
+			// console.log( oWrap.afei );
+
+
+
+            oWrap.setAttribute("id" , "goudan")
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

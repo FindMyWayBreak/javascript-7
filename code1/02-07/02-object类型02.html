@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*
+            基础数据类型
+                number string boolean undefined null symbol
+
+            引用数据类型
+                object
+             */
+
+            //内置对象 浏览器自带对象
+            //console.dir( document );
+            //console.dir(  console  );
+
+
+            /*let x = {
+                name : "阿飞"
+            };
+            x.age = 18;
+            console.log(x);*/
+
+         /*  let x = [999];
+            x['goudan'] = "狗蛋";//可以添加狗蛋属性
+            console.log(x);
+ */
+           //document.goudan = 456;
+           //console.dir(document)
+
+            let x = {
+                name : "阿飞",
+                age : 18,
+                y : 10//不能写;会报错,可以写逗号但不推荐
+            };
+
+            let y = Symbol("age");//整体的属性名
+
+            x[ y ] = 99;//自定义属性的值 相当于已定义值后 再修改
+            // x[ Symbol("age") ] = 88;
+						//新增新的属性在外部定义
+
+
+            console.log(x);
+						
+
+            // console.log( x.y );属性 . 与 [] 区别 
+						// console.log( x[y] );
+						console.log( x[Symbol("age")] )//Symbol独特 唯一性
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

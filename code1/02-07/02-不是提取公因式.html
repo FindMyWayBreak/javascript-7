@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            let oWrap = document.getElementById("wrap");
+
+            /*let html = oWrap.innerHTML;
+
+            oWrap.innerHTML = "456";*/
+            //html = "456"; //这样是改不了的 
+			//属性不能定义在变量中
+			/*
+			* 合法标签属性
+			*    - style 这个属性非常特殊
+			*            一个节点对象的style属性是 存储着这个节点所有行内样式的 对象
+			*/
+
+            //这样可以
+            let a = oWrap.style;
+            a.width = "100px";
+
+            //这样是不可以
+            //let style = oWrap.style.width;
+            //style = "100px" 与关键字style没关系即使变成a也是不可以的 单独一个变量代替属性是不可以的
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

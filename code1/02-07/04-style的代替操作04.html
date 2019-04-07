@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap.box{
+                float: left;
+                height:150px;
+                background-color: pink;
+                border: 5px solid #999;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap" style="width:150px;" class="goudan"></div>
+        
+        <script>
+
+            let oWrap = document.getElementById("wrap");
+
+            // oWrap.className += " box";
+
+            /*
+            oWrap.style.height = "100px";
+            oWrap.style.backgroundColor = 'pink';
+            oWrap.style.border = "5px solid #999";*/
+            //console.log(oWrap.style);
+            //oWrap.style.cssFloat = "left";
+            //oWrap.style.styleFloat = "left";
+
+            //console.log(oWrap.style.cssText);
+            oWrap.style.cssText += "height:150px;background-color:pink;border:5px solid #999";
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
