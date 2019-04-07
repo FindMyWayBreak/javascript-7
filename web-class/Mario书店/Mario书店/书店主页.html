@@ -1,0 +1,171 @@
+<!DOCTYPE HTML >  
+<html >  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Mario书店</title>  
+<link rel="stylesheet" href="css/book.css">
+
+<script type="text/javascript" src="js/book.js" ></script> 
+</head>  
+<body onLoad="leftTimer()"> 倒计时程序
+<div id="kuangjia">  
+  <div id="welcome" >  
+    <div id="huanying" style="text-align : center; font-size: 20px;">欢迎光临Mario书店</div>  
+    <div id="denglu" style="text-align : center; font-size: 20px;"><a href="index.html">登陆</a> | <a href="register.html">注册</a>     <a href="suggest.html">意见反馈</a></div>  
+     
+  </div>  
+<div id="photostore">  
+	<div id="logo">
+		<img src="img/photostore.png"  height="98"/>
+	</div>
+		<br/>
+		<img src="img/store.png" height="78" width="250">
+	<div id="search">
+		
+	<input type="text" name="seach" id="seach"  />
+	<button>搜索</button>
+	</div>
+	
+	<!--购物车-->
+	<div id="buycar" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<!--<img src="img/car.png"  height="98" width="98"/>-->
+	</div>
+</div>  
+ 
+ 
+  <nav id="daohang">
+	<ul>  
+    <li class=“abc”><a href="#">首    页</a></li>  
+    <li class=“abc”><a href="#">精选商品</a></li>  
+    <li class=“abc”><a href="#">二手书市场</a></li>  
+    <li class=“abc”><a href="#">一元抢购</a></li>  
+    <li class=“abc”><a href="#">个人中心</a></li>  
+    <li class=“abc”><a href="#">购物车</a></li>  
+ 	</ul>
+  </nav>
+ 
+<div id="head">    
+  <div id="tupian">		<video   autoplay loop muted width=100% height=99%> <!--要加上muted（静音），否则不可以自动播放-->
+			<source src="img/book.mp4" type="video/mp4" />
+		</video>
+  </div>  
+  <div id="gonggao">  
+    <div id="discount">   
+		<img id="img1" src="img/discountPhoto.gif" width=100% height=100%></img>
+		</div>  
+    <div id="time"> </div>  
+    
+  </div>  
+   
+</div>  
+
+
+<div id="jinping">商品<br /><hr class="shuipingxian" />  
+
+  <div id="r1c1" >信号与系统<br /> <!-- 第一行第一列-->
+    <div id="photobooks"><img src="img/book.png" draggable="true" ondragstart="dragStart(event)" id="《信号与系统》" name="59.00"  width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+   		 <span class="new">¥59.00</span>  
+   		 <span class="old">¥288.00</span>  
+   		 <span class="zhekou">2.0折</span>  
+    		<div style="clear:both;"></div> <!-- 换行-->
+      	<img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" />
+      	
+    </div>  
+  </div>  
+  
+  <div id="r1c1">通信原理<br />  
+    <div id="photobooks"><img src="img/book_02.jpg" draggable="true" ondragstart="dragStart(event)" id="《通信原理》---" name="59.00" width=100% height=100%"  /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div>  
+    
+  <div id="r1c1">网络安全<br />  
+    <div id="photobooks"><img src="img/book_03.jpg" draggable="true" ondragstart="dragStart(event)" id="《网络安全》---" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div>  
+    
+  <div id="r1c1">数据库<br />  
+    <div id="photobooks"><img src="img/book_04.jpg" draggable="true" ondragstart="dragStart(event)" id="《数据库》-----" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div>  
+    
+  <div id="row2">数据结构<br />  
+    <div id="photobooks"><img src="img/book_05.jpg" draggable="true" ondragstart="dragStart(event)" id="《数据结构》---" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div> 
+    
+  <div id="row2">概率论与数理统计<br />  
+    <div id="photobooks"><img src="img/book_06.jpg" draggable="true" ondragstart="dragStart(event)" id="概率论与数理统计" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" /><input name="goumai" type="button" value="购买" /></div>  
+    </div> 
+    
+  <div id="row2">高等数学<br />  
+    <div id="photobooks"><img src="img/book_07.jpg"draggable="true" ondragstart="dragStart(event)" id="《高等数学》---" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div>  
+    
+  <div id="row2">线性代数<br />  
+    <div id="photobooks"><img src="img/book_08.jpg"draggable="true" ondragstart="dragStart(event)" id="《线性代数》---" name="59.00" width=100% height=100%" /></div><br />  
+    <div id="Buymes">  
+    <span class="new">¥59.00</span>  
+    <span class="old">¥288.00</span>  
+    <span class="zhekou">2.0折</span>  
+    <div style="clear:both;"></div>  
+      <img src="img/car.jpg" width="30" height="30" />   <input name="goumai" type="button" value="购买" /></div>  
+    </div>  
+    
+  <br/>  
+  
+<div style="clear:both;"></div>
+<div id="paging">
+		<span>上一页</span>  
+			<a href="">1</a>  
+			<a href="">2</a> 
+			<a href="">3</a> 
+			<a href="">4</a>  
+			<a href="">5</a> 
+		<span>下一页</span>
+</div>
+<div id="footer">
+    <ul>
+        <li><a href="#">书店简介</a></li>
+        <li><a href="#">发展历程</a></li>
+        <li><a href="#">客户服务</a></li>
+        <li><a href="#">加入我们</a></li>
+    </ul>
+    <img src="img/erWeiMa.png" width="120" height="140" />
+</div>
+</div>  
+</div>  
+</body>  
+</html> 

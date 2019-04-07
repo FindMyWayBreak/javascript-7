@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "宋体";
+}
+#boderBox{
+	display: inline-block;
+	height: 250px;
+	width: 250px;
+	margin: 50px;
+	margin-left: 10%;
+	padding: 10px;
+	border: solid;
+	border-radius: 5px;
+	border-color: black;
+}
+foder{
+	-webkit-transition: -webkit-transform 1s;
+	transition: transform 1s;
+	margin: 20px;
+}
+.foder:hover{
+	-webkit-transform: scale(1.5);
+}
+#bin{
+	position: absolute;
+	top: 300px;
+	left: 65%;
+	display:inline-block;
+	margin: auto;
+/*	border: solid;*/
+	height: 220px;
+	width: 200px;
+}
+#bin{
+	text-align: center;
+}
+	
+}
+#head{
+	text-align: left;
+	font-size: 1em;
+}
+#reset{
+	display: inline;
+	line-height: 80px;
+	padding: 25px 25px;
+	border-radius: 10px;
+	font-size: 1.5em;
+	color: white;
+	background-color:black;
+}
+#animation{
+	display: none;
+	float: right;
+	position: absolute;
+	left: 111px;
+	top: 111px;
+	font-size: 1.5em;
+	color:black;
+}
+}

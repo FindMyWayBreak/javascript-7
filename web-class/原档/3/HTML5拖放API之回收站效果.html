@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5拖放API之回收站效果</title>
+	</head>
+	<!-- 这里我们采用相对位置位置 -->
+	<style type="text/css">
+		#div {width:315px;height:305px;float:left;border:2px solid #aaaaaa}
+		#div1{width:150px;height:140px;float:left;}
+		#div2{width:150px;height:140px;float:left;}
+		#div3{width:150px;height:140px;float:left;}
+		#div4{width:150px;height:140px;float:left;}
+		p
+		{
+			padding:40px;
+			text-align:center;
+			background-size:110px 110px;
+			background-repeat:no-repeat;
+			background-position:center;
+		}
+		img
+		{
+			position:relative;
+			left:80px;
+			top:50px;
+			width="300";
+			height="300";
+		}
+	</style>
+	<body>
+		<h3>HTML5拖放API之回收站效果<h3>
+		<hr /><br />
+		<div id="div">
+			<div id="div1" draggable="true" ondragstart="drag(event)"><p style="background-image:url(image/folder.png)">文件夹1</p></div>
+			<div id="div2" draggable="true" ondragstart="drag(event)"><p style="background-image:url(image/folder.png)">文件夹2</p></div>
+			<div id="div3" draggable="true" ondragstart="drag(event)"><p style="background-image:url(image/folder.png)">文件夹3</p></div>
+			<div id="div4" draggable="true" ondragstart="drag(event)"><p style="background-image:url(image/folder.png)">文件夹4</p></div>
+		</div>
+		<img id="recycle" src="image/recycle.jpg" ondrop="drop(event)" ondragover="allowDrop(event)" alt="垃圾箱"/>
+		<script>
+		//ondragstart事件回调函数
+		function drag(ev)
+		{
+			//设置传递的内容为被拖拽元素的id名称，数据类型为纯文本类型
+			ev.dataTransfer.setData("text/plain",ev.target.id);
+		}
+		
+		//ondragover事件回调函数
+		function allowDrop(ev)		{
+			//解禁当前元素为可放置被拖拽元素的区域
+			ev.preventDefault();
+		}
+		function drop(ev)
+		{
+				//解禁当前元素为可放置被拖拽元素的区域
+                ev.preventDefault();
+                //获取当前被放置的元素id名称
+                var id = ev.dataTransfer.getData("text");
+                //根据id名称获取元素对象
+                var p = document.getElementById(id);
+                //从父元素中删除子节点
+                p.parentNode.removeChild(p);
+		}
+	</script>
+	</body>
+</html>

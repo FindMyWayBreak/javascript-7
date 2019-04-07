@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>HTML5用户注册页面示例</title>
+        <link rel="stylesheet" href="css/reg.css">
+    </head>
+    <body>
+        <div id="container">
+            <!--页面标题-->
+            <h1>用户注册页面</h1>
+            <!--水平线-->
+            <hr />
+            <!--表单-->
+            <form method="post" action="URL" autocomplete="on">
+                <label>用户名：
+                    <input type="text" placeholder="请输入用户名" name="username" required />
+                </label>
+                <br />
+                <label>密　码：
+                    <input type="password" placeholder="请输入密码" name="pwd" required />
+                </label>
+                <br />
+                <label>确　认：
+                    <input type="password" placeholder="请再次输入密码" name="pwd" required />
+                </label>
+                <br />
+                <label>姓　名：
+                    <input type="text" placeholder="请输入真实姓名" name="name" required />
+                </label>
+                <br />
+                <label>邮　箱：
+                    <input type="email" placeholder="请输入电子邮箱" name="email" required />
+                </label>
+                <br />
+                <button type="submit">
+                    提交注册
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

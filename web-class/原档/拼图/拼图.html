@@ -1,0 +1,220 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>HTML5 画布综合项目之拼图游戏</title>
+
+<link rel="stylesheet" href="css/pintu.css"> 
+
+</head>
+
+<body>
+
+<div id="container"> <!--页面标题--> 
+
+<h3>HTML5 画布综合项目之拼图游戏</h3> <!--水平线--> 
+<hr /> <!--游戏内容--> <!--游戏时间--> 
+<div id="timeBox">
+共计时间：<span id="time">00:00:00</span> </div> <!--游戏画布-->
+
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid">
+
+对不起，您的浏览器不支持 HTML5 画布 API。 
+</canvas> <!--游戏按钮--> 
+<div>
+
+
+
+<button onClick="restartGame()">
+
+重新开始
+
+</button>
+
+</div>
+
+</div>
+
+
+
+</body>
+<script> //获取画布对象
+
+var c = document.getElementById('myCanvas'); //获取 2D 的 context 对象 var ctx = c.getContext('2d'); //声明拼图的图片素材来源
+
+
+var img = new Image(); img.src = "image/pintu.jpg"; //当图片加载完毕时 img.onload = function() { //打乱拼图的位置 generateNum(); //在画布上绘制拼图 drawCanvas();
+
+}
+
+//定义初始方块位置
+
+var num = [[00, 01, 02], [10, 11, 12], [20, 21, 22]];
+
+//打乱拼图的位置 function generateNum() { //循环 50 次进行拼图打乱
+
+for (var i = 0; i < 50; i++) { //随机抽取其中一个数据 var i1 = Math.round(Math.random() * 2);
+
+var j1 = Math.round(Math.random() * 2); //再随机抽取其中一个数据 var i2 = Math.round(Math.random() * 2);
+
+var j2 = Math.round(Math.random() * 2);
+
+//对调它们的位置 var temp = num[i1][j1];
+
+num[i1][j1] = num[i2][j2]; num[i2][j2] = temp;
+
+}
+
+}
+
+//定义拼图小方块的边长 var w = 100; //绘制拼图 function drawCanvas() { //清空画布
+
+ctx.clearRect(0, 0, 300, 300); //使用双重 for 循环绘制 3x3 的拼图 for (var i = 0; i < 3; i++) { for (var j = 0; j < 3; j++) {
+
+
+if (num[i][j] != 22) {//22 那块没有画
+
+//获取数值的十位数，即第几行 var row = parseInt(num[i][j] / 10); //获取数组的个位数，即第几列 var col = num[i][j] % 10; //在画布的相关位置上绘图
+
+ctx.drawImage(img, col * w, row * w, w, w, j * w, i * w, w, w);
+
+}
+
+}
+
+}
+
+}
+
+//监听鼠标点击事件 c.onmousedown = function(e) { //获取画布边界
+
+var bound = c.getBoundingClientRect(); //获取鼠标在画布上的坐标位置(x,y) var x = e.pageX - bound.left;
+
+var y = e.pageY - bound.top;
+
+//将 x 和 y 换算成几行几列 var row = parseInt(y / w); var col = parseInt(x / w);
+
+//如果当前点击的不是空白区域 if (num[row][col] != 22) { //移动点击的方块 detectBox(row, col); //重新绘制画布 drawCanvas(); //检查游戏是否成功 var isWin = checkWin(); //如果游戏成功 if (isWin) { //清除计时器
+
+
+
+
+
+clearInterval(timer); //绘制完整图片 ctx.drawImage(img, 0, 0); //设置字体为加粗、68 号字，serif ctx.font = "bold 68px serif";
+
+
+//设置填充色为红色 ctx.fillStyle = "red"; //显示提示语句
+
+ctx.fillText("游戏成功！", 20, 150);
+
+}
+
+}
+
+}
+
+//移动点击的方块 function detectBox(i, j) {
+
+//如果点击的方块不在最上面一行 if (i > 0) { //检测空白区域是否在当前方块的正上方 if (num[i-1][j] == 22) { //交换空白区域与当前方块的位置 num[i-1][j] = num[i][j];
+
+num[i][j] = 22; return;
+
+}
+
+}
+
+//如果点击的方块不在最下面一行 if (i < 2) { //检测空白区域是否在当前方块的正下方 if (num[i+1][j] == 22) { //交换空白区域与当前方块的位置 num[i+1][j] = num[i][j];
+
+num[i][j] = 22; return;
+
+}
+
+}
+
+//如果点击的方块不在最左边一列 if (j > 0) { //检测空白区域是否在当前方块的左边 if (num[i][j - 1] == 22) { //交换空白区域与当前方块的位置 num[i][j - 1] = num[i][j]; num[i][j] = 22;
+
+return;
+
+
+}
+
+}
+
+//如果点击的方块不在最右边一列 if (j < 2) { //检测空白区域是否在当前方块的右边 if (num[i][j + 1] == 22) { //交换空白区域与当前方块的位置 num[i][j + 1] = num[i][j]; num[i][j] = 22;
+
+return;
+
+}
+
+}
+
+}
+
+//胜利判断 function checkWin() {
+
+//使用双重 for 循环遍历整个数组 for (var i = 0; i < 3; i++) { for (var j = 0; j < 3; j++) { //如果有其中一块方块位置不对 if (num[i][j] != i * 10 + j) { //返回假 return false;
+
+}
+
+}
+
+}
+
+//返回真 return true;
+
+}
+
+//获取游戏计时文本区域对象 var time = document.getElementById("time"); //初始化计时器的时分秒 var h = 0,m = 0,s = 0;
+
+
+function getCurrentTime() 
+{ //将时分秒转换为整数以便进行自增或赋值 s = parseInt(s);
+
+m = parseInt(m); 
+h = parseInt(h);
+
+
+//每秒变量 s 先自增 1 s++;
+
+if (s == 60) 
+{ //如果秒已经达到 60，则归 0 s = 0; //分钟自增 1 m++;
+
+
+
+}
+
+if (m == 60) 
+{ //如果分钟也达到 60，则归 0 m = 0; //小时自增 1 h++;
+
+
+
+}
+
+//修改时分秒的显示效果，使其保持两位数 if (s < 10)
+
+s = "0" + s; if (m < 10) m = "0" + m; if (h < 10) h = "0" + h;
+
+//将当前计时的时间显示在页面上 time.innerHTML = h + ":" + m + ":" + s;
+
+}
+
+//重新开始游戏 function restartGame() { //清除计时器 clearInterval(timer); //时间清零 s = 0;
+
+m = 0; h = 0;
+
+//重新显示时间 getCurrentTime();
+
+timer = setInterval("getCurrentTime()", 1000);
+
+//重新打乱拼图顺序 generateNum();
+
+
+//绘制拼图 drawCanvas();
+
+}
+
+//每隔 1000 毫秒（1 秒）刷新一次时间 var timer = setInterval("getCurrentTime()", 1000); 
+</script>
+
+</html>

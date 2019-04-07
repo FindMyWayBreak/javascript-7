@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <canvas id="clock" width="200" height="200" >        
+		</canvas>
+    </body>
+</html>
+<script type="text/javascript">
+function displayTime(){
+        //获取当前时间
+    var now=new Date();
+    //获取时分秒
+    var h=now.getHours();
+    var m=now.getMinutes();
+    var s=now.getSeconds();
+    var c=document.getElementById("clock");//根据clock找到画布
+    var ctx=c.getContext("2d");//创建2dcontext对象
+    ctx.clearRect(0,0,200,200);//清空圆形区域
+    //画表盘
+    ctx.beginPath();
+    ctx.arc(100,100,95,0,2*Math.PI);//半径为95绘制圆心100,100.360度
+    ctx.lineWidth="10";
+    ctx.fillStyle="#FFFFFF";//填充颜色
+    ctx.fill();
+    ctx.strokeStyle="#3399CC";//填充外颜色
+    ctx.stroke();//渲染
+    ctx.closePath();//闭合路径
+    //画表心
+    ctx.beginPath();//可省略
+    ctx.arc(100,100,3,0,2*Math.PI);
+    ctx.fillStyle="black";
+    ctx.fill();
+    ctx.closePath();
+    //时刻度
+    for(var i=0;i<12;i++){
+        ctx.save();
+        ctx.translate(100,100);
+        ctx.rotate(30*i*Math.PI/180); //旋转 
+        ctx.save();
+        ctx.lineWidth="3";
+        ctx.strokeStyle="black";
+        ctx.stroke();//描述边显示在画布上
+        ctx.beginPath();
+        ctx.moveTo(0,-90);//移动
+        ctx.lineTo(0,-80);//画线段
+        ctx.closePath();         
+        ctx.restore();
+        ctx.translate(0,-75);  
+        ctx.rotate(-30*i*Math.PI/180);
+        //设置字体样式
+        ctx.font = "15px Courier ";
+        //设置字体填充颜色
+        ctx.fillStyle ="black";    
+        //从坐标点(50,50)开始绘制文字
+        if(i==0)
+        {
+              ctx.fillText(12, -6, 4);
+        }
+        else{
+              ctx.fillText(i, -6, 4);                      
+        }
+ 
+        ctx.restore();
+}
+    //画分刻度
+    for(var j=0;j<60;j++){
+        ctx.save();
+        ctx.translate(100,100);
+        ctx.rotate(6*j*Math.PI/180);
+        ctx.lineWidth="1";
+        ctx.beginPath();
+        ctx.strokeStyle="black";
+        ctx.moveTo(0,-90);
+        ctx.lineTo(0,-85);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+    }
+    //指针（秒针最长最细，时针最短最粗）
+    //先根据当前的时间确定秒针的位置
+    ctx.save();
+    ctx.translate(100,100);
+    ctx.rotate(6*s*Math.PI/180);
+    ctx.lineWidth="1";
+    ctx.beginPath();
+    ctx.moveTo(0,-80);
+    ctx.lineTo(0,-3);
+    ctx.strokeStyle="red";
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+    //确定分针的位置，分针一秒钟走0.1°
+    ctx.save();
+    ctx.translate(100,100);
+    ctx.rotate(6*m*Math.PI/180);
+    ctx.rotate(0.1*s*Math.PI/180);
+    ctx.lineWidth="2";
+    ctx.beginPath();
+    ctx.moveTo(0,-65);
+    ctx.lineTo(0,-3);
+    ctx.strokeStyle="black";
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+    //确定时针的位置，时针一分钟走0.5°，时针一秒走1/120°
+    ctx.save();
+    ctx.translate(100,100);
+    ctx.rotate(30*h*Math.PI/180);
+    ctx.rotate(0.5*m*Math.PI/180);
+    ctx.rotate((1/120)*m*Math.PI/180);
+    ctx.lineWidth="4";
+    ctx.beginPath();
+    ctx.moveTo(0,-45);
+    ctx.lineTo(0,-3);
+    ctx.strokeStyle="black";
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+    setTimeout(displayTime,1000) /*每过一秒执行一次displayTime*/
+}
+ window.onload = displayTime;//当onload事件发生时开始显示时间
+</script>

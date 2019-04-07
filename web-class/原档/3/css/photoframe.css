@@ -1,0 +1,32 @@
+﻿/*设置可放置区域样式*/
+#recycle {
+    width: 200px;
+    height: 50px;
+    border: 1px dashed;
+    text-align: center;
+    line-height: 50px;
+}
+/*设置图片相框效果样式*/
+.photoframe {
+    background: url(../image/photoframe.jpg) no-repeat;
+    width: 500px;
+    height: 438px;
+    text-align: center;
+    float: left;
+}
+/*设置图片垂直方向居中显示*/
+img {
+    vertical-align: middle;
+}
+/*设置图片2的样式*/
+.block {
+    width: 0px;
+    height: 100%;
+}
+/*设置带有相框的图片展示区域样式*/
+#output {
+    float: left;
+    margin: 10px;
+    text-align: center;
+    width: 500px;
+}

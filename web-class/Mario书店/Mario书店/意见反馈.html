@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel='stylesheet' type="text/css" href="css/suggest.css" /> 
+		<title></title>
+	</head>
+	<body>
+        <canvas id="myCanvas" width="2000" height="100" style="border:1px solid">
+            对不起，您的浏览器不支持HTML5画布API。
+        </canvas>
+		<div id="form">
+			<div id="head">
+			<h2>意见反馈</h2>
+			<hr>
+			</div>
+			<form method="get" action="bookstore.html" >
+				<div id="body">
+					<input type="text"placeholder="请输入您的意见" name="username" required/>
+				</div>
+				<label>邮&nbsp;&nbsp;&nbsp;箱：
+				<input type="email" placeholder="为方便联系，请输入邮箱" name="email" /><br/>
+				</label><br />
+				<button>提交意见</button>
+			</form>
+	
+		</div>
+		<script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");			
+			ctx.beginPath();
+			//绘制圆弧
+  /*          ctx.arc(100, 100, 100, 0, Math.PI * 2, true);
+			//对画布进行剪裁
+			ctx.clip();
+			ctx.closePath();*/
+			
+			//设置画笔填充色为深蓝色
+			ctx.fillStyle = "darkblue";
+			//绘制宽高均为200像素的矩形，左上角点在原点处
+			ctx.fillRect(0,0,2000,100);
+			
+			//使用for循环在画布上随机位置画10个五角星
+			for(var i=0;i<10;i++){
+				//随机生成0-200之间x的坐标位置
+				var x = Math.random()*2000;
+				//随机生成0-200之间x的坐标位置
+				var y = Math.random()*100;
+				//绘制金色的五角星
+				drawStar(x,y,10,"gold",ctx);				
+			}
+
+			//绘制五角星的方法
+			function drawStar(dx, dy, size, color, ctx) {
+                ctx.beginPath();
+                for (var i = 0; i < 5; i++) {
+					//转换弧度
+                    var radians = Math.PI / 5 * 4 * i;
+					//计算下一个坐标位置
+                    var x = Math.sin(radians)* size + dx;
+                    var y = Math.cos(radians)* size + dy;
+					//绘制路径
+                    ctx.lineTo(x, y);
+                }
+				//结束路径绘制
+                ctx.closePath();
+				//设置画笔颜色
+                ctx.fillStyle = color;
+				//为n角星填充颜色
+                ctx.fill();
+            }
+        </script>
+
+
+	</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+    background-color: silver;/*设置页面背景颜色为银色*/
+}
+/*设置游戏界面样式*/
+#container {
+	background-color: white;
+	width: 600px;   
+    margin: auto;
+	padding: 20px;
+	text-align: center; 
+    box-shadow: 10px 10px 15px black;
+}
+/*设置游戏时间面板样式*/
+#timeBox {
+    margin: 10px 0;
+    font-size: 18px;
+}
+/*设置游戏按钮样式*/
+button {
+    width: 200px;
+    height: 50px;
+    margin: 10px 0;
+    border: 0;
+	outline: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;  
+    background-color: lightcoral;
+}
+/*设置鼠标悬浮时的按钮样式*/
+button:hover {
+    background-color: coral;
+}

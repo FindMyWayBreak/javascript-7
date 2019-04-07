@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+<style>
+*{margin:10px;padding:0px;}/*页边距。填充*/
+ 
+
+.calendar{
+  width: 240px;/*宽*/
+  height: 400px;/*高度*/
+  display: block;/*块*/
+}
+ 
+
+.calendar .calendar-title-box{
+  position: relative;/*位置。相对*/
+  width: 100%;
+  height: 36px;
+  line-height: 36px;/*行高*/
+  text-align:center;/*文本对齐*/
+  border-bottom: 1px solid #ddd;/*边缘底部。单色*/
+}
+ 
+
+.calendar .prev-month {/*上一页。*/
+  position: absolute;/*绝对化*/
+  top: 12px;
+  left: 0px;
+  display: inline-block;/*内连块*/
+  width: 0px;
+  height: 0px;
+  border-left: 0px;
+  border-top: 6px solid transparent;
+  border-right: 8px solid #999;
+  border-bottom: 6px solid transparent;/*透明的*/
+  cursor: pointer;/*光标，指针，*/
+}
+ 
+
+.calendar .next-month {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-right: 0px;
+  border-top: 6px solid transparent;
+  border-left: 8px solid #999;
+  border-bottom: 6px solid transparent;
+  cursor: pointer;
+}
+ 
+ 
+
+.calendar-table{
+  width: 100%;
+  border-collapse: collapse;/*边折叠。折叠*/
+  text-align:center;
+}
+ 
+
+.calendar-table tr{/*行*/
+  height: 30px;
+  line-height: 30px;
+}
+ 
+
+.currentDay {/*当前*/
+  color: red;
+}
+ 
+.currentMonth {
+  color: #999;
+}
+ 
+
+.otherMonth{
+  color: #ede;
+}
+</style>
+	<title>电子日历的设计与实现</title>
+</head>
+<body>
+	<h2>电子日历的设计与实现</h2>
+    <hr>
+    <div class="calendar" id="calendar"></div>
+    <script >
+	
+var d1 = new Date();
+d1.getFullYear();
+d1.getMonth();
+d1.getDate();
+d1.getDay();
+
+(function(){
+ 
+  var dateObj = (function(){
+    var _date = new Date();   
+    return {
+      getDate : function(){
+        return _date;
+      },
+      setDate : function(date) {
+        _date = date;
+      }
+    };
+  })();
+ 
+  
+  renderHtml();
+  
+  showCalendarData();
+  
+  bindEvent();
+ 
+ 
+  function renderHtml() {
+    var calendar = document.getElementById("calendar");
+    var titleBox = document.createElement("div");  
+    var bodyBox = document.createElement("div"); 
+ 
+    
+    titleBox.className = 'calendar-title-box';
+    titleBox.innerHTML = "<span class='prev-month' id='prevMonth'></span>" +
+      "<span class='calendar-title' id='calendarTitle'></span>" +
+      "<span id='nextMonth' class='next-month'></span>";
+    calendar.appendChild(titleBox);    
+ 
+    
+    bodyBox.className = 'calendar-body-box';
+    var _headHtml = "<tr>" + 
+              "<th>日</th>" +
+              "<th>一</th>" +
+              "<th>二</th>" +
+              "<th>三</th>" +
+              "<th>四</th>" +
+              "<th>五</th>" +
+              "<th>六</th>" +
+            "</tr>";
+    var _bodyHtml = "";
+ 
+    
+    for(var i = 0; i < 6; i++) {  
+      _bodyHtml += "<tr>" +
+              "<td></td>" +
+              "<td></td>" +
+              "<td></td>" +
+              "<td></td>" +
+              "<td></td>" +
+              "<td></td>" +
+              "<td></td>" +
+            "</tr>";
+    }
+    bodyBox.innerHTML = "<table id='calendarTable' class='calendar-table'>" +
+              _headHtml + _bodyHtml +
+              "</table>";
+    
+    calendar.appendChild(bodyBox);
+  }
+ 
+  
+  function showCalendarData() {
+    var _year = dateObj.getDate().getFullYear();
+    var _month = dateObj.getDate().getMonth() + 1;
+    var _dateStr = getDateStr(dateObj.getDate());
+ 
+    
+    var calendarTitle = document.getElementById("calendarTitle");
+    var titleStr = _dateStr.substr(0, 4) + "年" + _dateStr.substr(4,2) + "月";
+    calendarTitle.innerText = titleStr;
+ 
+    
+    var _table = document.getElementById("calendarTable");
+    var _tds = _table.getElementsByTagName("td");
+    var _firstDay = new Date(_year, _month - 1, 1);  
+    for(var i = 0; i < _tds.length; i++) {
+      var _thisDay = new Date(_year, _month - 1, i + 1 - _firstDay.getDay());
+      var _thisDayStr = getDateStr(_thisDay);
+      _tds[i].innerText = _thisDay.getDate();
+     
+      _tds[i].setAttribute('data', _thisDayStr);
+      if(_thisDayStr == getDateStr(new Date())) {    
+        _tds[i].className = 'currentDay';
+      }else if(_thisDayStr.substr(0, 6) == getDateStr(_firstDay).substr(0, 6)) {
+        _tds[i].className = 'currentMonth';  
+      }else {   
+        _tds[i].className = 'otherMonth';
+      }
+    }
+  }
+ 
+ 
+  function bindEvent() {
+    var prevMonth = document.getElementById("prevMonth");
+    var nextMonth = document.getElementById("nextMonth");
+    addEvent(prevMonth, 'click', toPrevMonth);
+    addEvent(nextMonth, 'click', toNextMonth);
+  }
+ 
+
+  function addEvent(dom, eType, func) {
+    if(dom.addEventListener) { 
+      dom.addEventListener(eType, function(e){
+        func(e);
+      });
+    } else if(dom.attachEvent){ 
+      dom.attachEvent('on' + eType, function(e){
+        func(e);
+      });
+    } else { 
+      dom['on' + eType] = function(e) {
+        func(e);
+      }
+    }
+  }
+ 
+  
+  function toPrevMonth() {
+    var date = dateObj.getDate();
+    dateObj.setDate(new Date(date.getFullYear(), date.getMonth() - 1, 1));
+    showCalendarData();
+  }
+ 
+  
+  function toNextMonth() {
+    var date = dateObj.getDate();
+    dateObj.setDate(new Date(date.getFullYear(), date.getMonth() + 1, 1));
+    showCalendarData();
+  }
+ 
+ 
+  
+  function getDateStr(date) {
+    var _year = date.getFullYear();
+    var _month = date.getMonth() + 1;    
+    var _d = date.getDate();
+     
+    _month = (_month > 9) ? ("" + _month) : ("0" + _month);
+    _d = (_d > 9) ? ("" + _d) : ("0" + _d);
+    return _year + _month + _d;
+  }
+})();
+    </script>
+</body>
+</html>

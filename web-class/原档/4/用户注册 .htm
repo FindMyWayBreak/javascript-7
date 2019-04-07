@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+ <style>
+/*注册面板*/
+#container{
+	background-color:white;
+	color:#339966;
+	padding:50px;
+	margin: 50px auto 0px; /*上边距100px；左右为auto；下边距0px*/
+	width:800px;
+	text-align:center;
+	font-family:"宋体";
+	box-shadow: 20px 20px 20px black;
+}
+
+/*水平线*/
+hr{
+	width:80%;
+	border:#339966 1px solid;
+	margin-bottom:15px;
+}
+
+/*输入表单*/
+input{
+	width:180px;
+	height:20px;
+	margin:5px;
+	font-size:16px;
+	font-family:"宋体";
+}
+button{
+	width:100px;
+	height:50px;
+	background-color:#339966;
+	border:0px;
+	color: white;
+	margin:10px;
+	font-size:18px;
+	font-family:"宋体";
+	font-weight:bold;
+}
+
+/*悬浮*/
+button:hover{
+	background-color:#339966;
+}
+
+		</style>
+        <title>HTML5用户注册页面示例</title>
+    <body>
+        <div id="container">
+           
+            <h1>用户注册页面</h1>
+            <hr />
+            <form method="post" action="URL" autocomplete="on">
+                <label>用户名：
+                    <input type="text" placeholder="请输入用户名" name="username" required />
+                </label>
+                <br />
+                <label>密　码：
+                    <input type="password" placeholder="请输入密码" name="pwd" required />
+                </label>
+                <br />
+                <label>确　认：
+                    <input type="password" placeholder="请再次输入密码" name="pwd" required />
+                </label>
+                <br />
+                <label>姓　名：
+                    <input type="text" placeholder="请输入真实姓名" name="name" required />
+                </label>
+                <br />
+                <label>邮　箱：
+                    <input type="email" placeholder="请输入电子邮箱" name="email" required />
+                </label>
+                <br />
+                <button type="submit">
+                    提交注册
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

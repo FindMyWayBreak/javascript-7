@@ -1,0 +1,81 @@
+<!DOCTYPE html>    /*文档类型*/
+<html> /*根元素标签*/
+  <header> /*文档首部以head标签开始以head结束*/
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    /*utf-8字符集声明*/
+     
+	
+
+        <title>表格标签的综合应用</title> /*网页标题标签*/
+    </head>
+	 <style> /*样式标签*/
+/*设置表格总体样式 */
+ 
+        #recruit {
+            width: 100%;/*基于上一级父型元素宽度百分比*/
+            border-collapse: collapse;/*为表格设置合并边框collapse 	如果可能，边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性模型：*/
+            text-align: left;/*文本左对齐*/
+        }
+		/*设置单元格样式*/
+#recruit td, #recruit th {
+            border: 1px solid orange;/*1像素宽，橙色实线边框*/
+            padding: 7px;/*设置各边均为7像素的内边距*/
+}/*设置标题单元格样式*/
+#recruit th {
+    background-color: orange;/*设置背景颜色*/
+    color: white;/*字体颜色*/
+}
+ 
+/*设置单元行样式*/
+#recruit tr.orange{
+    background-color: #FFEDDB
+} 
+
+
+</style>
+
+    <body>
+        <h3>表格标签的综合应用</h3>
+        <hr />
+    <table border="1" id="recruit">
+            <caption>
+                招聘信息表
+            </caption>
+            <tr>
+                <th width="45">地点</th>
+              <th width="145">招聘职位</th>
+                <th width="65">公司</th>
+          </tr>
+            <tr>
+              <td >全国</td>
+              <td >产品培训生</td>
+                <td >腾讯</td>
+            </tr>
+            <tr class="orange">
+                <td>全国</td>
+                <td>前端开发工程师</td>
+                <td>阿里巴巴</td>
+            </tr>
+            <tr>
+                <td >上海</td>
+                <td >交互设计师</td>
+                <td >网易游戏</td>
+      </tr>
+			 <tr class="orange">
+                <td>北京</td>
+                <td>视觉设计师</td>
+                <td>数据分析师</td>
+            </tr> 
+			<tr>
+                <td >深圳</td>
+                <td >数据分析师</td>
+              <td >IBM</td>
+            </tr>
+             <tr class="orange">
+                <td>杭州</td>
+                <td>数据研发工程师</td>
+                <td>微软</td>
+            </tr>
+        </table>
+		
+    </body>
+</html>

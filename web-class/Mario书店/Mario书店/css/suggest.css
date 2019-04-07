@@ -1,0 +1,36 @@
+#form{
+	padding: 20px;
+	width: 70%;
+	margin: auto;
+	background-color: beige;
+	text-align:center;/*字体居中*/
+	box-shadow: 10px 10px 15px black;/*加阴影效果*/
+}
+#head{
+	text-align:center;/*字体居中*/
+}
+#body{
+	margin: auto;
+}
+#body input{
+	
+	width: 400px;
+	height: 200px;
+}
+hr{
+	background-color: orange;
+	border:none;/*去掉边框*/
+	height: 1px;/*设置高度*/
+	width: 80%;/*设置长度*/
+	text-align: center;
+}
+h2{
+	color: orange;
+}
+
+button{
+	height: 38px;
+	background-color: cornflowerblue;
+	border: none;
+	
+}

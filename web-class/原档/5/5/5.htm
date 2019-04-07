@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css文件/1.css"/>
+		<script src="js文件/2.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<script type="text/javascript">
+			function boxOnDragEnter(event){
+				event.preventDefault();
+				$("#bin_cover").css("transform","rotate(70deg)");
+				//$("#bin_cover").animate({transform:'rotate(90deg)'},500);
+				//$("#bin").css("background-color","grey");
+				//$("#bin_cover").animate({transform:'rotate(90deg)'},500);
+//				var div_1=document.getElementById("div_1");
+//				div_1.style.backgroundColor="grey";
+			}
+			function boxOnDragLeave(event){
+				event.preventDefault();
+				$("#bin_cover").css("transform","rotate(0deg)");
+			}
+			function allowDrag(event){
+				event.preventDefault();
+			}
+			function imgOnDragStart(event){
+				event.dataTransfer.setData("Text",event.target.id);
+			}
+			function boxOnDrop(event){
+				event.preventDefault();
+				var data=event.dataTransfer.getData("Text");
+				$("#"+data).fadeOut(500);
+				var h=document.getElementById("animation");
+				h.innerHTML="文件夹"+data+"删除";
+				$("#bin_cover").css("transform","rotate(0deg)");
+				animation();
+			}
+			function reSet(){
+				$(".foder").fadeIn(500);
+				var h=document.getElementById("animation");
+				h.innerHTML="还原文件";
+				animation();
+			}
+			function getMousePos(event) {
+				var e = event || window.event;
+				return {'x':e.clientX,'y':e.clientY}
+			}
+			function animation(){
+				var Reset=document.getElementById("animation");
+				var x,y;
+				Reset.style.display="block";
+				Reset.style.opacity=1;
+				x=getMousePos(event).x-100;
+				y=getMousePos(event).y-100;
+				Reset.style.left=x+"px";
+				Reset.style.top=y+"px";
+				$("#animation").stop();
+				$("#animation").animate({top:'-=30px',opacity:'0'},800);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="head">
+		<h1>HTML5拖放API回收站的效果</h1>
+		<hr />
+		</div>
+		<div id="boderBox">
+			<img  id=”一“   class="foder" src="img/1.png" ondragstart="imgOnDragStart(event)"/>
+			<img  id=”二“   class="foder"  ondragstart="imgOnDragStart(event)"src="img/2.png"/>
+			<img  id=”“   class="foder"  ondragstart="imgOnDragStart(event)"src="img/3.png"/>
+			<img  id=”“   class="foder"  ondragstart="imgOnDragStart(event)"src="img/4.png"/>
+		</div>
+		<div id="bin" >
+			<br />
+			<img  ondragover="allowDrag(event)" ondragenter="boxOnDragEnter(event)" ondragleave="boxOnDragLeave(event)"  ondrop="boxOnDrop(event)" class="bin" src="img/5.jpg"/>
+			<p id="rest" onClick="reSet()">还原</p>
+		</div>
+		<div onselectstart="return false;">
+			<h3 id="animation">Initialized</h3>
+		</div>
+	</body>
+</html>

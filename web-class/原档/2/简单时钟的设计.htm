@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+#clock{
+	font-size:80px;/*字体大小*/
+	font-weight: bold;/*字体粗细*/
+	color: red;
+	text-align: center;/*文本对齐*/
+	margin: 20px;/*外边距，上下左右*/
+}
+.box1{
+	width: 100px;
+	height: 100px;
+	border: solid 5px #000;/*边框样式。边框宽度.边框颜色*/
+	float: left;-
+}
+.box2{
+    float: left;
+    width: 30px;
+    margin-right: 10px;/*元素右外边边距*/
+
+}
+
+</style>
+<script>
+function change() {
+	var hour=document.getElementById("h");/*变量。文件。元素名*/
+	var minute=document.getElementById("m");/*声明变量*/
+    var second=document.getElementById("s");/*getElementById() 方法可返回对拥有指定 ID 的第一个对象的引用。*/
+
+    var date=new Date();
+    var h=date.getHours();
+    var m=date.getMinutes();
+    var s=date.getSeconds();/*getSeconds()函数用于使用当地时间返回当前Date对象中的秒值。*/
+
+    hour.innerHTML=h;
+    minute.innerHTML=m;
+    second.innerHTML=s;/*赋值*/
+}
+</script>
+
+	<title>简单时钟设计</title>
+	
+</head>
+<body >
+     <h1>简单时钟设计</h1>
+     <hr>
+     <div id="clock">
+          <div class="box1" id="h"></div>
+          <div class="box2">:</div>
+          <div class="box1" id="m"></div>
+          <div class="box2">:</div>
+          <div class="box1" id="s"></div>
+          <script type="text/javascript">
+           setInterval("change()",1000)/*时间间隔*/
+     </script>
+     </div>
+</body>
+</html>

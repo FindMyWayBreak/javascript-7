@@ -1,0 +1,77 @@
+body {
+	background-color:#CCCCCC;/*设置页面背景色为浅灰色*/
+}
+
+/*问卷面板样式*/
+#questionnaire{
+	background-color:white;	
+	padding:15px;
+	margin: auto; 
+	width:900px;
+	text-align:center;
+	font-family:"微软雅黑";
+	box-shadow: 10px 10px 15px black;
+}
+
+/*标题样式*/
+h1{
+   color:orange;	
+}
+
+/*水平线样式*/
+hr{
+	width:80%;
+	border:orange 1px solid;
+	margin-bottom:15px;
+}
+
+/*表单样式*/
+form{
+	text-align:left;
+	width:80%;
+	margin:auto;
+}
+
+/*列表选项样式*/
+li{
+	margin:10px 0;
+}
+
+/*输入表单样式*/
+input{
+	margin:10px;	
+}
+
+/*输入表单样式*/
+input[type="text"],input[type="tel"]{
+	width:130px;
+	height:20px;
+	font-size:16px;
+	font-family:"微软雅黑";
+	border:0px;
+	border-bottom:1px solid;
+	outline:none;
+}
+
+/*按钮外区域div元素样式*/
+#btn{
+	text-align:center;
+}
+
+/*按钮样式*/
+button{
+	width:120px;
+	height:40px;
+	background-color:orange;
+	border:0px;
+	color: white;
+	margin:10px;
+	font-size:18px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+}
+
+/*鼠标悬浮时按钮样式*/
+button:hover{
+	background-color:#FF6835;
+}

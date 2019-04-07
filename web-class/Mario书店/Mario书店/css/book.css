@@ -1,0 +1,310 @@
+#kuangjia {  
+    height: auto;  
+    width: 100%;  
+    margin-top: 0px;  
+    margin-right: auto;  
+    margin-bottom: 0px;  
+    margin-left: auto;  
+}  
+#welcome {  
+    height: 25px;  
+    width: 100%;  
+    background-color: #f5f5f5;  
+    margin-top: 0px;  
+    margin-right: auto;  
+    margin-bottom: 0px;  
+    margin-left: auto;  
+}  
+#photostore {  
+    height: 100px;  
+    width: 100%;  
+    margin-top: 0px;  
+    margin: auto;  
+    margin-bottom: 0px; 
+     
+} 
+#logo{
+	float: left;
+	height: 98px;
+	width: 100px;
+
+}
+
+#search{
+	left: 470px;/*搜索框的位置*/
+	top: 0;
+	float: right;
+	position: fixed;
+	text-align: left;
+  
+    height: 70px;  
+    width: 383px;  
+    background: url(../img/search.png);  
+    background-size:400px 73px
+} 
+#search input{
+	margin-top: 23px;
+	margin-left:28px ;
+	width: 260px;
+	height: 30px;
+}
+#search button{
+	border: none;
+	width: 40px;
+	height: 40px;
+	background: none;
+	margin-left:40px ;
+}
+ 
+#buycar{
+	background-color:red ;
+	right: 10px;
+	position: fixed;
+	height: 198px;
+	width: 198px;
+	background: url(../img/car.png); 
+	/*background-size:98px 98px*/
+	color:#DC143C ;
+}
+#daohang {  
+    height: 30px;    
+    font-size: 25px;  
+    background-color: #ff6932;  
+    
+}  
+#head { 
+    height: 280px;  
+    width: 80%;  
+    margin-top: 0px;  
+    margin: auto;  /*居中*/
+    padding-top: 10px;
+    margin-bottom: 10px;
+   background-color: #F5FFFA;  
+}  
+ 
+#jinping {  
+	font-size:17px;
+    height: auto;  
+    width: 80%;  
+    margin-top:0px;  
+    margin-right: auto;  
+    margin-bottom: 0px;  
+    margin-left: auto;  
+   
+    
+}   
+#huanying {  /*欢迎导航栏*/
+    height: 100%;  
+    width: 50%;  
+    float: left;  
+    clear: none;  
+}  
+
+#kuangjia #daohang ul li {       
+float: left;
+list-style: none;  
+ 
+}  
+body,td,th {  
+    font-size: 12px;  
+    font-family: "微软雅黑";  
+}  
+#daohang a:link {  
+    text-decoration: none;   
+    display:block;/*块级元素*/
+	text-decoration:none; /*取消下划线*/
+	color:black;/*字体为白色*/
+	font-weight:bold;/*字体加粗*/
+	font-size:25px;/*字体大小为25px*/
+	/*background-color:#7BF;设置背景颜色*/
+	width:200px;/*宽度200像素*/
+	height:30px;/*高度30像素*/
+	text-align:center;/*文本居中显示*/
+	line-height:30px;/*行高30像素*/
+}  
+#denglu a:link {  
+    text-decoration: none;  
+    color: #5F5F5F;  
+}  
+#apDiv5 a:link {  
+    text-decoration: none;  
+    color: 969696;  
+    color:#fff;  
+}  
+a:visited {  
+    text-decoration: none;  
+}  
+#daohang a:hover {   
+    background-color: #ff5a00;  
+ 
+}  
+#apDiv5 a:hover {  
+    text-decoration: none;  
+    background-color: #ff5a00;  
+    padding-top: 10px;  
+    padding-left: 25px;  
+    padding-right: 25px;  
+    padding-bottom: 11px;  
+    color:#FFF;  
+}  
+a:active {  
+    text-decoration: none;  
+}  
+#tupian {  
+    float: left;  
+    height: 100%;  
+    width: 53%;  
+    margin-left: 10px;  
+    border: 1px solid #F5FFFA;  
+    text-align: center;  
+}  
+
+#gonggao {  
+    float: left;  
+    height: 100%;  
+    width: 29%;  
+    margin-left: 10px;  
+}  
+  
+#time {  
+    height: 48%;  
+    width: 100%;  
+    border: 1px solid #F5FFFA;  
+    margin-top: 10px;  
+    text-align:center;
+    font-size: 20px;
+    color:#FF6A6A ; 
+    line-height: 130px;  
+    vertical-align: middle;  
+}  
+#r1c1 {  
+    float: left;  
+    height: auto;  
+    width: 23%;  
+    margin-left: 18px; 
+    border: 1px solid #e0e0e0;  
+}  
+
+#row2 {  
+    float: left;  
+    height: auto;  
+    width: 23%; 
+    margin-top:20px ; 
+    margin-left: 18px; 
+    border: 1px solid #e0e0e0;  
+} 
+#photobooks {  
+    height: 156px;  
+    width: 85%;  
+    border: 1px solid #e5e5e5;  
+    text-align: center;  
+    margin-top: 3px;   
+    margin-right: auto;  
+    margin-left: auto;  
+}  
+
+
+#Buymes {  
+    height: 20%;  
+    width: 85%;  
+    margin-top: 0px;  
+    margin-right: auto;  
+    margin-left: auto;  
+    margin-bottom: 4px;
+}  
+#Buymes input {  
+	width: 60px;
+	height: 25px;
+	margin-left: 10px;
+    background-color: #ff5b5a; 
+    border: none; /*去边框*/
+}  
+
+body {  
+    margin-top: 0px;  
+    padding-top: 0px;  
+    color:#7E807E;  
+}  
+.new {  
+    color: #e7394d;  
+}  
+.shuipingxian {  
+    color: #e5e5e5;  
+}  
+.zhekou {  
+    color: #fc764c;  
+}  
+.old {  
+    color: #b8c1bd; 
+    text-decoration:line-through; 
+}  
+ 
+.xiahuaxian {  
+    text-decoration: underline;  
+}  
+.abc {  
+    height: 100%;  
+    width: 100px;  
+    float: left;  
+}  
+#discount {  
+    height: 48%;  
+    width: 100%;  
+    border: 1px solid #F5FFFA;  
+    text-align:center;  
+}  
+body {  
+    margin: 0px;  
+    padding: 0px;  
+} 
+
+#paging{/*分页*/
+	text-align: center;
+	margin-top: 50px;
+	height: 30px;
+}
+
+#paging a,#paging span{ 
+	text-decoration: none;    
+    border:1px solid #f9d52b;          
+    padding: 5px 7px;          
+    color: #767675;            
+    cursor: pointer;
+}
+#paging a:hover,#paging a:active,#paging span:hover,#paging span:active{
+	background-color:#f9d52b;/*设置背景颜色*/
+}
+   
+#footer {
+	height:150px;
+	width: 100%;
+	margin-top: 15px;  
+    margin-right: auto;  
+    margin-bottom: 0px;  
+    margin-left: auto;  
+    padding: 15px 0;
+    background:#E3E3E3;
+
+}
+
+#footer ul{
+	float: left;
+	width: 200px;
+	margin: 0 0 0 20px;
+	padding: 0;
+	color:#3B3B3B;
+}
+
+#footer ul li {
+	padding: 10px 0;
+	list-style: none;
+	color: #3B3B3B;
+}
+
+#footer ul li a{
+	text-decoration: none;
+	color: #3B3B3B;
+}
+#footer img{
+	float: right;
+}
