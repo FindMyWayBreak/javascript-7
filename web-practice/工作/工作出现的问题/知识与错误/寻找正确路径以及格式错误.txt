@@ -1,0 +1,5 @@
+1正确的改法，但页面没改变。可能是打开的文件错误
+2.一般来说页面不显示，可能是少某个代码的字母
+3.标点符号的格式
+、1路径E:\mlm\src\components\base\CommAddress.vue
+2（1）vi-bind简写为'：'.:left-options="{showBack: true}

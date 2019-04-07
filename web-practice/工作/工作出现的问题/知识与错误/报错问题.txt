@@ -1,0 +1,5 @@
+1<li v-for="(goods, index) in type2Goods" :key="index">正确；
+<li v-for="goods in type2Goods">回显示红条但可以运行
+
+2 <template slot-scope="scope">正确的，
+ <template scope="scope">无法显示，更新了新的就是上面的标签使用方法

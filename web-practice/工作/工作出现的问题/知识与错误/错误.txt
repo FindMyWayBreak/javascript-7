@@ -1,0 +1,4 @@
+1：<label for="two">女</label>正确；<label for=two">女</label>错误；会引起"<"变红
+2：class后面不能加"："
+3：无法实现isok值：fasle和true的改变，颜色改变。于代码对照错误。
+4：v-for一整个视频没有实现

@@ -1,0 +1,53 @@
+1用插值的形式来显示div上的文字（从其他地方传参数），传递过来就直接用
+2传递过来是数字，改成文字。
+// 订单状态
+      state (orderState) {
+        if (orderState === 0) {
+          return '待付款'
+        } else if (orderState === 1) {
+          return '待发货'
+        } else if (orderState === 2) {
+          return '待收货'
+        } else if (orderState === 3) {
+          return '已完成'
+        } else if (orderState === 4) {
+          return '已关闭'
+        } else if (orderState === 5) {
+          return '待退款'
+        } else if (orderState === 6) {
+          return '已退款'
+        } else if (orderState === 7) {
+          return '退款失败'
+        } else if (orderState === 8) {
+          return '确认失败'
+        } else if (orderState === 9) {
+          return '退款中'
+        } else if (orderState === 10) {
+          return '待出单'
+        } else if (orderState === 11) {
+          return '待使用'
+        } else if (orderState === 12) {
+          return '退款审核失败'
+        } else if (orderState === 13) {
+          return '部分退款审核成功'
+        } else if (orderState === 14) {
+          return '支付待审核'
+        } else if (orderState === 15) {
+          return '待使用'
+        } else if (orderState === 16) {
+          return '待评价'
+        } else if (orderState === 17) {
+          return '已完成待评价'
+        } else if (orderState === 18) {
+          return '申请退款'
+        } else {
+          return ''
+        }
+      },
+插入{{state(order.orderState)}}
+3.用现有参数组成一个新的参数
+接收参数this.price = parseInt(this.goods.count) * parseInt(this.goods.price)
+后台调用payPrice: this.order.payPrice,
+data中全局声明price：‘ ’，
+然后可以直接用或者绑值
+4数组写法是goods.[0].goodsName

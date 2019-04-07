@@ -1,0 +1,7 @@
+1;新建一个文件夹
+2：打开svn服务
+3：输入网址
+4完成
+5打开vscode，用打开文件夹。
+6运行nmp i（nstall）
+7npm run dev

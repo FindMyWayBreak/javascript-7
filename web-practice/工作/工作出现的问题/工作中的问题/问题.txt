@@ -1,0 +1,7 @@
+1.v-text& v-htmlspan:a：li：ol标签是什么：
+2.v-for中index和key：是数组从零一二三四五六打印。
+3；head下<script type="text/javascript" src="../assets/js/vue.js"></script>
+需要引入的就是文件方式：在这个已打开文件中的中后退一个目录到assets目录下的js，js下的vue.js
+4.index文件中，<a href="./helloword.html"创建连接和现打开的此文件同目录下的helloword.html超链接。
+5：dom事件。
+6v-if="！log"中的！是取非，取反与或非

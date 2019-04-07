@@ -1,0 +1,55 @@
+
+官网：http://tindex.julianpiaowu.com
+
+H5：http://th5.julianpiaowu.com
+
+供应商：http://teb.julianpiaowu.com
+
+帐号：zy 111111
+
+运营：http://tadmin.julianpiaowu.com
+
+帐号：admin 111111
+:
+
+2、web原型：https://jst97e.axshare.com 密码：111111 
+3、APP原型：https://yc3y52.axshare.com 密码：q7w8e9r4
+:
+
+4省省扒原型https://jpx6k2.axshare.com
+密码123456
+【测试环境_实习基地_web】http://47.92.134.255:7662/login 
+【测试环境_教_webhttp://47.92.134.255:1660/pts/pt/welcome.auth 
+:
+
+【原型网页】https://p9p8b9.axshare.com 密码：111111
+:
+
+【APP原型】https://3y35cv.axshare.com 111111
+:
+
+【数字校园】dddl——dddl2018 
+【实习基地】实习基地编号——000000
+公司网址；http://pm.laidanyun.com/
+姓名拼音 123456
+http://element-cn.eleme.io/#/zh-CN/component/button组建应用
+测试网页http://localhost:8081/login?loginType=2
+javascript入门:https://www.imooc.com/learn/36
+JavaScript：菜鸟教程。http://www.runoob.com/
+教程网站：http://www.w3school.com.cn/h.asp
+前端的路线网站：1http://www.cnblogs.com/w3cschool/p/6527337.html
+2https://zhuanlan.zhihu.com/p/28886543
+阶段一：web页面制作基础，掌握传统PC端网页布局和制作；
+
+阶段二：UI网站设计，掌握页面设计和原型图设计；
+
+阶段三：编程基础技术，利用js完成一些常见网页的特效开发；
+
+阶段四：后端开发技术，了解web服务器的工作原理，并可以简单搭建自己的应用程序服务器端；
+
+阶段五：移动互联网应用，掌握现在主流的页面制作技术，可以完成微网站的制作，并可以做到多设备兼容；
+
+阶段六：特效开发高级实战，通过实际项目开发，精通前端常用框架的实际应用及问题解决，以及常见特效开发、前后台交互开发等；
+
+阶段七：企业级应用开发，能够独立使用HTML5完成APP开发制作。
+OS18082350970061

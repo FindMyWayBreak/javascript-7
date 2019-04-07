@@ -1,0 +1,3 @@
+this.$router.push({path: '/shopOrderDetail', query: {id: this.order.id, type: '1'}})
+跳转到shopOrderDetail的页面，因为shopOrderDetail有多个，它会跳转到this.order.id, type: '1'的商品页面。
+上。只需要写type=1就行如上

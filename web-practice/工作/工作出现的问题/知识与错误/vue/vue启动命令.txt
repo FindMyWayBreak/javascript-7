@@ -1,0 +1,2 @@
+笔记：nmp insatll配置开发环境.liver sever是他文件的名字.
+运行网站：npm run dev在packae-lock。js中

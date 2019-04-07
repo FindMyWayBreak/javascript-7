@@ -1,0 +1,58 @@
+1在mounted中接收传来的值
+2在methods中进行调用后台      getOrder () {
+        var that = this
+        var params = {
+          token: this.token, // 所需要从后台调用的数据
+          orderId: this.id
+        }
+        this.$http.post('/mlm/shop/order/getById.htm', params).then(response => { // 调用后台的地址
+          var resBody = response.body
+          if (resBody.isSuccess === 0) {
+            this.order = resBody.result.order
+            this.goods = resBody.result.goods
+            this.shopId = resBody.result.order.shopId
+            this.sellerRemark = ''
+            if (resBody.result.order.message !== '') {
+              var ms = JSON.parse(resBody.result.order.message)
+              for (var i = 0; i < ms.length; i++) {
+                if (ms[i].state !== false) {
+                  this.sellerRemark = ms[i].sellerRemark
+                }
+              }
+            }
+            this.shopdetail()
+            this.qrcode()
+            // this.initOrderInfo(order)
+            this.loadShow = false
+            this.loading = false
+          } else if (resBody.isSuccess === 2) {
+            this.$vux.alert.show({
+              title: '提示',
+              content: '登录超时，请重新登录！',
+              onHide () {
+                that.$router.push({path: '/login'})
+              }
+            })
+          } else {
+            this.$vux.alert.show({
+              title: '提示',
+              content: resBody.errorMsg,
+              onHide () {
+                console.log(resBody.errorMsg)
+              }
+            })
+3传递参数用的是用@绑定methods，触发事件在成功是传递
+    bindToestimate () {
+        this.$router.push({path: '/Shopevaluation', query: {order: JSON.stringify(this.order)}})
+      },
+4.在methods上写好的调用端口上的参数，在mounted上挂载
+this.Applyrefund()
+5 var goods = JSON.parse(this.$route.query.goods)
+        this.goods = goods[0]插值要写上goods.属性
+解决传递过来用console。log打印出来是数组的情况，6
+ <div v-for="(item,index) in goods" :key="index">传参是时只传递一个goods传参时要这么写
+bindTodetails (item) {
+        this.$router.push({path: '/orderfirst', query: {order: JSON.stringify(this.order), goods: JSON.stringify(item)}})
+      },
+而不是 this.$router.push({path: '/orderfirst', query: {order: JSON.stringify(this.order), goods: JSON.stringify(goods)}})
+      },

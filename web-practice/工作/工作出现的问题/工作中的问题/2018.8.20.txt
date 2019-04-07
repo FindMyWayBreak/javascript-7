@@ -1,0 +1,39 @@
+传参：1从上一个页面接到的this.shopId = this.$route.query.shopId
+ pageProp (path) {
+        this.$router.push({path: path, query: {shopId: this.shopId}})
+      },
+2从接口接到的参数
+3本身输入的参数
+4给的所有参数都要传递
+v-绑定参数
+7组件库的组件vux‘’popup-picker demo源代码
+vue主页面
+6传参结构  Applyrefund () {
+        var that = this
+        var param = {
+          token: this.token,
+          refundType:this.refundType,
+          refundReason:this.refundReason,
+          buyRefundRemark:this.buyRefundRemark,
+          goodStatutus:this.goodStatutus,
+          goodsId:this.goodsId,
+          ggId:this.ggId,
+          orderNo:this.orderNo,
+          memberId:this.memberId
+        }
+        this.$http.post('/mlm/shop/order/applyRefund.htm', param).then(response => {
+          var resBody = response.body
+          if (resBody.isSuccess === 0) {
+            that.$vux.alert.show({
+              title: '操作提示',
+              content: '申请退款成功'
+            })
+          } else {
+            that.$vux.alert.show({
+              title: '操作提示',
+              content: resBody.errorMsg
+            })
+          }
+        })
+      }
+    },

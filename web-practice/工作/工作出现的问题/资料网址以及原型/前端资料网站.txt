@@ -1,0 +1,37 @@
+:
+vs code
+
+:
+http://note.youdao.com/noteshareid=19386df9e987b9df59c4c1f5a3dc876c&sub=8B5BF87FA04B4A03B4C10EC921BC6345
+:
+
+
+HBuilder+MUI+H5+
+
+:
+前端框架  vueJS
+
+:
+开发工具 VS Code   或者 webStorm
+
+:
+移动端开发框架   HBuilder+MUI+H5+   
+开发工具HBuilder
+:
+http://www.dcloud.io/
+
+:
+https://code.visualstudio.com/
+
+:
+https://www.jetbrains.com/idea/
+
+:
+https://www.jetbrains.com/webstorm/?fromMenu
+
+:
+https://cn.vuejs.org/ vue官网
+
+:
+web端 UI框架 http://element.eleme.io/#/zh-CN
+vue视频源代码：https://github.com/shenghy/VueDemo

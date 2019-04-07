@@ -1,0 +1,10 @@
+1https://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
+2https://www.jianshu.com/p/bbf34107bda6
+3https://blog.csdn.net/ufan94/article/details/77915662
+4去除ul的点<ul type="none">
+5三元表达式：https://www.cnblogs.com/sxz2008/p/6432290.html
+6vux组件https://doc.vux.li/zh-CN/components/tab.html
+7 :animate=false；为了使动画失效 http://www.w3school.com.cn/jquery/effect_animate.asp
+8|是或者的意思。
+9。vue 中的props作用：https://www.cnblogs.com/xiaohuochai/p/7388866.html。
+8浅谈Vue.js中ref ($refs)用法举例总结。https://www.jb51.net/article/130897.htm

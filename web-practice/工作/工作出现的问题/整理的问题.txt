@@ -1,0 +1,8 @@
+ 1.<div v-for="(item,index) in goods" :key="index">
+中的key代表的什么意思
+2:src="purl + item.goodsSmallImg"
+purl是什么意思
+3@click.native="bindToRefund(item)"
+native。
+4var that = this
+5函数中小括号内字母的意思
