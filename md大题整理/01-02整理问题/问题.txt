@@ -1,0 +1,65 @@
+1 JS中Null与Undefined的区别
+https://www.cnblogs.com/qyzy1024/p/4036661.html
+null表示"没有对象"，即该处不应该有值。典型用法是：
+
+（1） 作为函数的参数，表示该函数的参数不是对象。
+
+（2） 作为对象原型链的终点。
+
+
+Object.getPrototypeOf(Object.prototype)
+// null
+
+undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。典型用法是：
+
+（1）变量被声明了，但没有赋值时，就等于undefined。
+
+（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。
+
+（3）对象没有赋值的属性，该属性的值为undefined。
+
+（4）函数没有返回值时，默认返回undefined。
+
+
+var i;
+i // undefined
+
+function f(x){console.log(x)}
+f() // undefined
+
+var  o = new Object();
+o.p // undefined
+
+var x = f();
+x // undefined
+
+
+2  not defind 为什么要初始化
+
+4 
+变量的值是取未变化前（不包括这行运算得值）的上一个值，变化了取变化后的。
+操作完成后的变量值会成为这个变量现有值
+ oWrap.innerHTML = "wrap被点击了！";//oWrap.innerHTML  + =  是上次操作完成后总和
+
+5 02-操作标签属性 获取id节点名成改变是否影响 02-操作标签属性02
+由上至下运行导致不同地方获取的节点不同
+
+6 let var 区别03
+
+7 const常量const修饰的数据类型是指常类型，常类型的变量或对象的值是不能被更新的。const 推出的初始目的，正是为了取代预编译指令，消除它的缺点，同时继承它的优点
+
+8定义变量名 规则
++ =的理解
+
+9行内添加js码
+引入外部js
+ /*
+            如果一个script标签已经用来去引入外部的js文件了，那么再在里面代码没有意义的
+            不要再在这种script里面写任何东西了
+             */
+
+10 console.dir console.dir()可以显示一个对象所有的属性和方法。
+
+11 函数运行的几种方式 
+document.onclick=a(函数名)
+03-object类型
