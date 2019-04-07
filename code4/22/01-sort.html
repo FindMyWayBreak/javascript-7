@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            let a = [12,78,50,20,32,40,90];
+
+            // let b = a.sort(); //升序
+            // let b = a.reverse(); //反序
+            //a.sort().reverse();a.sort（）返回值为得到的数组
+            // console.log(a);
+            // console.log(b===a);为true 不改变不本身的a值 b值只是输出b值
+
+            a.sort( function(x,y){//xy形参不用写实参不用写 xy代表比较中两个数据的位置 xy不用加上属性 代表的真个对象
+                return y-x;//关于这个值正值交换顺序 这个只是正负 要加上属性比较
+            } );
+
+            console.log(a);//改变a值
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

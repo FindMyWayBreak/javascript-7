@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+
+            /*
+            ES6 箭头函数
+			回调函数做参数地方 回调函数是一个作为变量传递给另外一个函数的函数，它在主体函数执行完之后执行。 
+                () => //完整写法
+             */
+
+            /*let fn =        v => v;//只有一个形参的情况 不加括号 即使没有形参也要加上括号
+            var fn = function(v){//两个相等
+                return v;
+            }*/
+
+
+           /*var fn = function(a,b){
+               return a+b;
+           }*/
+
+            /*let fn =   (a,b)=>a+b;
+            console.log(fn(4, 5));*/
+
+            /*var fn = function(a,b){
+                let c = a+2;
+                let d = b-3;
+                alert(c+d);
+                return 3;
+            };
+
+            let fn =   (a,b)=>{
+                let c = a+2;
+                let d = b-3;
+                alert(c+d);
+                return 3;
+            };//两个相同 大括号为一个作用域*/
+
+
+
+            /*var fn = function(){
+                return {a:10,b:20};
+            }
+
+            let fn =   ()=>({a:10,b:20});*/对象要加上括号
+
+            /*document.onclick = ()=>{
+                console.log(this);
+            }*/
+			// this不合事件 document挂钩 输出的是window
+			// 没有argument在里面
+
+
+            let arr = [1,2,3];
+
+            /*let b = arr.map(function(v){
+                return v*v;
+            })*/
+
+            let b = arr.map(v=>v*v);
+            console.log(b);
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

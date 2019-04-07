@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            let a = "abc阿飞789456";
+
+
+            let b = a.substring(3,5);//包含3 不包含5
+            console.log(b);//"阿飞"
+
+            let bb = a.substring(5,3);//没有前后限制，自动调整
+            console.log(bb);
+
+            let c = a.substring(3);//3到最后
+            console.log(c);//阿飞789456
+
+            let d = a.substring(-2,3);//没有负数，认为是0
+            console.log(d);
+
+            let e = a.slice(-5,-2); //可以倒着数，并且要满足先后顺序
+            console.log(e);倒数没有0
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

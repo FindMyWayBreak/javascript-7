@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            //forEach
+            /*
+			帮你执行的不需要主动执行的 传入的值会自动执行
+                接受函数，该函数第一个形参代表每一位的数据，
+                              第二个形参代表每一位的序号，
+                              第三个形参代表原数组
+							  不能接受return foreach的return没有意义
+							  for each不能跳break出来
+							  for in区别
+            */
+            let a = [4,5,6];
+             let b = a.forEach(function(x,y,z){
+                console.log(x);
+
+           });
+						//传递参数 遍历数组中的数据
+
+            // console.log(b);
+
+
+//             for(let i=0;i<a.length;i++){
+//                 (function(x,y,z){
+//                     console.log(x,y,z);
+					//没有触发事件
+// 										console.log(i)
+//                 })(a[i],i,a);
+// 								// console.log(i)
+//             }
+
+//             let b = {
+// 
+//                 forEach : function(  fn  ){
+//                     alert( fn(4,5) );
+//                 }
+// 
+//             }
+// 
+// 
+//             b.forEach( function(a,b){
+//                 return a+b;
+//             } )
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

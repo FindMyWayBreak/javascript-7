@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*function fn(a,b){
+                console.log(a + b);
+            }
+
+            setInterval( "fn(2,3)" , 1000 );*/
+			// 带到字符传中单程js代码来读 放到全局作用域 全局作用域没fn ""只识别全局作用域的
+
+            (function(){
+
+                function fn(a,b){
+                    console.log(a + b);
+                }
+				window.fn=fn;//在这之内的fn没有变成全局变量 但是赋值给了全局名为fn的属性
+                setInterval( fn , 1000 , 2 , 3 );
+				// fn是放入整个函数 字符串放到全局作用域终会报错 fn()是放入返回值
+            })();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*let [a,b=10] = [5];
+            let {x:hh,y:tt=20} = {x:10};*/
+
+            /*function fn(a,b=10,c){ 函数参数默认值，传的是undefined 其他不能用默认值
+                console.log(a);
+                console.log(b);
+                console.log(c);
+            }
+
+            fn(5,30,20);*/
+
+
+            /*function fn( [a,b] ){
+                console.log(a);
+                console.log(b);
+            }
+
+            fn( 5 );//模式不对应报错一定要有模式*/
+
+            function fn(  {x=10,y=30}  ){
+                console.log(x);
+                console.log(y);
+            }
+            fn();//报错
+            // fn({}); //10 30 interal接口 模式对应
+           
+		   // 单独形参的默认值 整体实参的默认值
+
+//             function fn( {x:x,y:y} = {x:10,y:30}  ){
+//                 console.log(x);
+//                 console.log(y);
+//             }
+//             //fn(); //10 30
+//             fn({}); //undefined undefined
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

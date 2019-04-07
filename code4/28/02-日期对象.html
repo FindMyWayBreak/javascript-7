@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+
+            /*
+			函数是类 对象是由类创建的
+             new Date() 创建的一个新的对象 刷新的那一刻时间不会随着时间的推移而改变
+               函数刷新的时间 函数执行的时间 本地此时此刻的日期对象/时间戳
+			GMT标准时间 加上8小时为北京时间 
+             */
+
+            let d = new Date();
+			//函数执行的时间
+
+            console.dir(d);
+
+            //以下api返回数字
+            console.log(d.getFullYear()); //年
+            console.log(d.getMonth()+1); //月
+            console.log(d.getDate());//日
+            console.log(d.getHours());//时
+            console.log(d.getMinutes());//分
+            console.log(d.getSeconds());//秒
+            console.log(d.getDay());//星期
+
+
+            console.log("======================");
+
+            console.log( d.toUTCString() );//零时区的时间 格林威尔
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

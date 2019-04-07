@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            //json 是一个格式非常标准的长得像对象的字符串
+			//所有的语言都支持json格式
+
+            //'{"name":"阿飞","age":18,"marry":true}';
+
+
+            let a = {
+                name : "阿飞",
+                age : 18,
+                marry : true,
+                handsome : true
+            };
+
+            console.log( JSON.stringify(a) ); //反序列化
+
+            let b = '{"a":10,"b":"狗蛋","c":true}';
+//格式必须要严格
+            console.log( JSON.parse(b) ); //序列化
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
