@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select:none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*
+            replace()
+                str.replace(正则 , 字符串|函数);
+                替换匹配到的内容变成第二个参数的内容（如果是字符串直接替换，如果是函数在，执行之后用返回值替换）
+             */
+
+            let reg = /(阿飞|风屿|海文)(老师|先生|大大)/g;
+            let str = "阿飞老师真的是位好老师，海文先生人长得很帅，风屿大大心肠好，海文先生超级棒！";
+
+            //let newStr = str.replace(reg,"小浪");
+            let newStr = str.replace(reg,(a,b,c)=>{
+                //经过了很多很多运算之后，得到用来替换的字符串
+                //console.log(a,b);
+                return "小浪"+c+c.slice(1);
+            });
+
+            console.log(newStr);
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

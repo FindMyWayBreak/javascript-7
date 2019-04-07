@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>阿飞飞的博客</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+
+    <form action="" method="" id="form">
+        <input type="text" name="user">
+        <input type="text" name="user1">
+        <input type="text" name="user2">
+    </form>
+
+    <button id="wrap">
+        按钮
+    </button>
+
+
+    <script>
+
+        let oForm = document.getElementById("form");
+
+        /*
+        focus()
+        blur()
+         */
+        /*wrap.onclick = function(){
+            oForm.user.focus();
+        }*/
+
+        oForm.user.focus();
+
+        let aInp = [...oForm.children];
+        aInp.forEach((ele,index)=>{
+            ele.oninput = function(){
+                if( this.value.length >= 5 ){
+                    this.disabled = true;
+                    aInp[index+1] && aInp[index+1].focus();
+                }
+            };
+            ele.onblur = function(){
+                if( this.value.length < 5 ){
+                    this.focus();
+                }
+            }
+        });
+
+
+        //oForm.submit();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

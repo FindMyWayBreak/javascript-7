@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>阿飞飞的博客</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+
+    <form action="" method="" id="form">
+        <input type="text" name="user">
+        <input type="radio" name="sex">
+        <input type="radio" name="sex">
+        <select name="gg">
+            <option value="g" id="h">1</option>
+            <option value="b">2</option>
+            <option value="k">3</option>
+        </select>
+        <input type="submit">
+    </form>
+
+    <div id="wrap">
+        文字文字文字文字文字文字文字
+    </div>
+
+    <script>
+
+        let oForm = document.getElementById("form");
+
+        /*oForm.user.onchange = function(){
+            console.log(1);
+        };*/
+        /*oForm.user.oninput = function(){
+            console.log(1);
+        };*/
+
+        oForm.gg.onchange = function(){
+            console.log("选项发生了改变");
+        };
+
+        console.dir(oForm.gg.children[0]);
+
+
+        document.onselectstart = function(){
+            console.log(2);
+            return false;
+        }
+
+        /*document.getElementById("h").onselect = function(){
+            console.log("被选中了");
+        };*/
+
+        oForm.onsubmit = function(){
+            console.log("提交");
+
+            return false;
+        }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

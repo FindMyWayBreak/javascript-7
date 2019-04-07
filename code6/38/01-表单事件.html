@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>阿飞飞的博客</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">wrap</div>
+        <a href="" id="x">aaa</a>
+        <form action="" method="" id="form">
+            <input type="text" name="user">
+            <input type="radio" name="sex">
+            <input type="radio" name="sex">
+            <input type="submit">
+        </form>
+        
+        <script>
+
+            /*let oForm = document.getElementById("form");
+
+            oForm.user.value = "阿飞飞";
+
+            console.log( oForm.sex );*/
+
+            /*
+            onfocus
+            onblur
+                并不是所有的元素都能添加焦点事件，只有能获得焦点的元素才能添加焦点事件
+                document,a,window,以及表单相关的元素
+             */
+
+            /*let x = document.getElementById("x");
+
+            x.onfocus = function(){
+                console.log("我获得焦点啦！");
+            };
+            x.onblur = function(){
+                console.log("嘤嘤嘤，我失去焦点啦！");
+            };*/
+
+            window.onfocus = function(){
+                document.title = "阿飞飞的博客";
+            };
+            window.onblur = function(){
+                document.title = "卧槽！出BUG！快来看看啊~";
+            };
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+
+    <script>
+
+        let oWrap = document.getElementById("wrap");
+        let ifDown = {
+            65 : {
+                bool : false,
+                timer : null,
+                setTimer:function(){
+                    oWrap.style.left = oWrap.offsetLeft-5+'px';
+                    this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                },
+                clearTimer:function(){
+                    cancelAnimationFrame(this.timer);
+                }
+            },
+            87 : {
+                bool : false,
+                timer : null,
+                setTimer:function(){
+                    oWrap.style.top = oWrap.offsetTop-5+'px';
+                    this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                },
+                clearTimer:function(){
+                    cancelAnimationFrame(this.timer);
+                }
+            },
+            68 : {
+                bool : false,
+                timer : null,
+                setTimer:function(){
+                    oWrap.style.left = oWrap.offsetLeft+5+'px';
+                    this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                },
+                clearTimer:function(){
+                    cancelAnimationFrame(this.timer);
+                }
+            },
+            83 : {
+                bool : false,
+                timer : null,
+                setTimer:function(){
+                    oWrap.style.top = oWrap.offsetTop+5+'px';
+                    this.timer = requestAnimationFrame(this.setTimer.bind(this));
+                },
+                clearTimer:function(){
+                    cancelAnimationFrame(this.timer);
+                }
+            }
+        };
+
+        document.onkeydown = function(ev){
+            let keyCode = ev.keyCode;
+            if( !ifDown[keyCode] )return;
+            ifDown[keyCode].bool || ifDown[keyCode].setTimer();
+            ifDown[keyCode].bool = true;
+        };
+        document.onkeyup=function(ev){
+            let keyCode = ev.keyCode;
+            if( !ifDown[keyCode] )return;
+            ifDown[keyCode].clearTimer();
+            ifDown[keyCode].bool = false;
+        };
+
+
+
+
+
+        /*let ifDown = {};
+
+        document.onkeydown = function(ev){
+            let keyCode = ev.keyCode;
+            switch (keyCode) {
+                case 65:
+                    ifDown[65] || moveLeft();
+                    break;
+                case 87:
+                    ifDown[87] || moveTop();
+                    break;
+                case 68:
+                    ifDown[68] || moveRight();
+                    break;
+                case 83:
+                    ifDown[83] || moveBottom();
+                    break;
+            }
+            ifDown[keyCode] = true;
+        };
+        document.onkeyup=function(ev){
+            let keyCode = ev.keyCode;
+        }
+
+        //运动
+        function moveLeft(){
+            !function m(){
+                oWrap.style.left = oWrap.offsetLeft-5+'px';
+                requestAnimationFrame(m);
+            }();
+        }
+        function moveTop(){
+            !function m(){
+                oWrap.style.top = oWrap.offsetTop-5+'px';
+                requestAnimationFrame(m);
+            }();
+        }
+        function moveRight(){
+            !function m(){
+                oWrap.style.left = oWrap.offsetLeft+5+'px';
+                requestAnimationFrame(m);
+            }();
+        }
+        function moveBottom(){
+            !function m(){
+                oWrap.style.top = oWrap.offsetTop+5+'px';
+                requestAnimationFrame(m);
+            }();
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

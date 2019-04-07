@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;user-select:none;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <input type="text" id="inp">
+            <input type="button" value="提交" id="btn">
+            <ul id="list"></ul>
+        </div>
+        
+        <script>
+
+            let oInp = document.getElementById("inp"),
+                oBtn = document.getElementById("btn"),
+                oList = document.getElementById("list")
+            ;
+
+            oBtn.onclick = function(){
+                let val = oInp.value;
+                if(!val)return;
+
+                /*脏字过滤 s*/
+                let reg = /傻.*逼|操|你[ ,.，。\d]*[妈爸]|日|干|垃[ ,.，。\d]*圾|狗/g;
+                val = val.replace(reg,($0)=>{
+                    let s = "";
+                    [...$0].forEach(()=>s+="□");
+                    return s;
+                });
+                /*脏字过滤 e*/
+
+                let oLi = document.createElement("li");
+                oLi.innerHTML = val;
+                oList.appendChild(oLi);
+                oInp.value = "";
+            }
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

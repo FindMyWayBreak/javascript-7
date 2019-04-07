@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 300px;
+			height: 300px;
+			overflow-y: scroll;
+			border: 1px solid #000;
+		}
+		.box2{
+			height: 700px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="box2"></div>
+	</div>
+
+	<script type="text/javascript">
+		
+		/*
+			谷歌以及ie
+				mousewheel
+					event.wheelDelta 	
+							-120 下滚
+							120 上滚
+
+			火狐滚动事件
+				DOMMouseScroll 只能通过二级事件监听
+					event.detail
+						3 下滚
+						-3 上滚
+
+
+			只有谷歌和ie有onmousewheel事件属性,默认值为null
+			火狐根本就没有onmousewheel这属性 为undefined
+			obj.a为undefined它根本没有这个属性
+			null为有这个属性但还等待下面的赋值
+		
+		*/
+
+
+		box.onmousewheel = function(){}
+
+		if(document.createElement("div").onmousewheel === null){
+
+			console.log('谷歌')
+		}else{
+
+			console.log('火狐')
+		}
+
+		/*box.addEventListener('DOMMouseScroll', function(event){
+
+			console.log(event.detail)详细
+		})*/
+		/*box.attachEvent('onmousewheel', function(event){//鼠标滚轮
+
+			event = event || window.event;
+
+			console.log(event.wheelDelta)//分叉口
+		})
+		*/
+
+	</script>
+</body>
+</html>

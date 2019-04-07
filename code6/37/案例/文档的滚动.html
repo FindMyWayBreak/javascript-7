@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		#box{
+			width: 500px;
+			height: 500px;
+			overflow: hidden;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box">
+		<img src="1.png" style="width: 100%;display: block;">
+	</div>
+<script type="text/javascript">
+
+	addEvent(box,"mousewheel",function(event){
+
+		event = event || window.event;
+
+		var dir;
+		if(event.detail){
+
+			dir = event.detail /3;
+		}else{
+
+			dir = event.wheelDelta / -120;
+		}
+		
+		this.scrollTop += dir*20;
+	});
+	
+
+	//监听事件
+	function addEvent(ele,eType,callback,capture) {
+		
+		//主流浏览器
+		if(ele.addEventListener){
+
+			//判断是否为火狐
+			if(eType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+
+				eType = "DOMMouseScroll";
+			}
+
+			ele.addEventListener(eType,callback,capture);
+
+			return callback;
+		}else{
+
+			//处理ie的this指向问题
+			var codeCall = function(){
+
+				//ie低版本不支持bind,所以用call, apply
+				callback.call(ele);
+			};
+
+			ele.attachEvent("on"+eType,codeCall);
+
+			return codeCall;
+		}
+	}
+
+	//移除事件
+	function removeEvent(ele,eType,callback,capture){
+
+		ele.removeEventListener ? ele.removeEventListener(eType,callback,capture)
+								: ele.detachEvent("on"+eType,callback);
+		/*if(ele.removeEventListener){
+
+			ele.removeEventListener(eType,callback,capture)
+		}else{
+
+			ele.detachEvent("on"+eType,callback);
+		}*/
+	}
+
+	//一次性事件
+	function oneEvent(ele,eType,callback,capture){
+
+		var fn = addEvent(box,eType,function(e){
+
+			callback.call(ele,e);
+			removeEvent(this,'click',fn);
+		});
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box"></div>
+
+<script type="text/javascript">
+		
+	//
+	addEvent(box,"mousewheel",function(){
+
+		console.log(1)
+	});
+
+/*	//文档双击移除事件
+	addEvent(document,"dblclick",function(){
+
+		removeEvent(box,'click',fn);
+		console.log('取消了box 的点击事件')
+	});*/
+
+	//监听事件
+	function addEvent(ele,eType,callback,capture) {// 元素 元素类型 回调 事件的捕获
+		
+		//主流浏览器
+		if(ele.addEventListener){
+
+			//判断是否为火狐
+			if(eType === "mousewheel" && document.createElement("div").onmousewheel === undefined){
+
+				eType = "DOMMouseScroll";
+			}
+
+			ele.addEventListener(eType,callback,capture);
+
+			return callback;
+		}else{
+
+			//处理ie的this指向问题不指向节点指向window
+			var codeCall = function(){
+
+				//ie低版本不支持bind,所以用call, apply为数组
+				callback.call(ele);
+			};
+
+			ele.attachEvent("on"+eType,codeCall);
+
+			return codeCall;
+		}
+	}
+
+	//移除事件
+	function removeEvent(ele,eType,callback,capture){
+
+		ele.removeEventListener ? ele.removeEventListener(eType,callback,capture)
+								: ele.detachEvent("on"+eType,callback);
+		/*if(ele.removeEventListener){
+
+			ele.removeEventListener(eType,callback,capture)
+		}else{
+
+			ele.detachEvent("on"+eType,callback);
+		}*/
+	}
+
+	//一次性事件
+	function oneEvent(ele,eType,callback,capture){
+
+		var fn = addEvent(box,eType,function(e){
+		callback.call(ele,e);
+			removeEvent(this,'click',fn);
+			console.log(this)
+			
+		});
+	}
+
+</script>
+</body>
+</html>

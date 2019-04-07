@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+
+            #wrap{
+                position: absolute;
+                left: 200px;
+                top: 200px;
+                width: 50px;
+                height: 50px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            let oWrap = document.getElementById("wrap");
+
+            document.onkeydown = function(ev){
+                let keyCode = ev.keyCode;
+                switch (keyCode) {
+                    case 65:
+                        oWrap.style.left = oWrap.offsetLeft-5+'px';
+                        break;
+                    case 87:
+                        oWrap.style.top = oWrap.offsetTop-5+'px';
+                        break;
+                    case 68:
+                        oWrap.style.left = oWrap.offsetLeft+5+'px';
+                        break;
+                    case 83:
+                        oWrap.style.top = oWrap.offsetTop+5+'px';
+                        break;
+                }
+            };
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

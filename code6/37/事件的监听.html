@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		#box{
+			float: left;
+			padding: 10px;
+			border: 1px solid #000;
+		}
+
+		#box2{
+			width: 200px;
+			height: 200px;
+
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		box1
+		<div id="box2">
+			box2
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		
+		/*
+			主流浏览器才有事件捕获机制
+			1 html 7
+				2 body 6
+					3 div#box1 5
+						4 div#box2
+
+			事件冒泡 box2 -> box1 -> body -> html
+			事件捕获 html -> body -> box1 -> box2
+		*/ 
+
+		/*
+			事件监听
+				用到事件的地方最好就是使用 DOM2级来监听
+				可以添加多个相同的节点onclick可以绑定多次
+				
+			监听事件
+				事件传递默认就是冒泡
+				capture 事件捕获只是冒泡传递顺序颠倒
+
+				主流浏览器
+					ele.addEventListener(事件类型,回调方法,捕获 true|冒泡 false)
+						1 this指向节点本身
+
+				ie浏览 ie8
+					ele.attachEvent(on事件类型,回调方法)
+						1. this不再指向节点本身 指向window
+						2. ie没有事件捕获 只有冒泡
+						停止冒泡事件onclick1，onclick1会触发但是 onclick2捕获事件不会接着触发 也就是阻止事件的传递
+			
+			移除事件
+				removeEventListener(事件类型,回调方法,捕获|冒泡)第三个为true就为捕获 冒泡为false
+				detachEvent(on事件类型,回调方法) ie 特有的
+
+			
+		*/
+		// dom0级只能监听一个事件 后面会覆盖前面的 没有dom一级事件
+		//事件监听DOM 2级事件 
+
+
+
+/*======================= ie =============================*/ 
+/*box.attachEvent("onclick",function(event){
+	//ie上加上个on
+
+	console.log(1);//event和dom0级返回的对象一模一样
+	ie上里面this指向widows
+});
+
+box2.attachEvent("onclick",function(event){
+
+	event = event || window.event;
+
+	event.cancelBubble = true;
+
+	console.log(2);
+});*/
+
+/*===================== 移除事件 ============================*/
+
+		var ergou = function(){
+
+			console.log(1);
+		};
+		box.attachEvent("onclick",ergou);
+
+
+		//文档双击
+		document.ondblclick = function(){
+
+			box.detachEvent('onclick',ergou)
+		}//两个要一一对应不然无法移除
+
+	</script>
+</body>
+</html>
