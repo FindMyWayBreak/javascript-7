@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*function fn(data){
+                let a = data.a;
+                let b = data.b;
+                //let c = data.c || 100;//简写 c不能为0 是假值
+                let c = data.c;
+                if( c === undefined ){
+                    c = 100;
+                }
+            } 想有数值就用 没数值的话为100默认值*/
+// es6写法
+            /*function fn(data){
+                let {x:a,y:b,z:c=100} 模式 只有undefined默认为100= data;
+                //let {a,b,c=100} = data;？？？
+                console.log(a,b,c);
+            }
+							10给a 20给b
+            fn({x:10,y:20});*/
+
+
+//             let [a,b,c=90] = [7,8];//严格undefined采取默认值
+//             console.log(a, b, c);
+/* 
+            function f(){
+                console.log("xx");
+            }
+            let [x=f()] = [0]; */
+						// 现在有默认值[1],没有时才会执行f(   )
+
+           let [a=b,b] = [undefined,1];
+            console.log(a,b); //报错不允许前面 只有undefined情况下使用b，还没到b未定义 报错
+           
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

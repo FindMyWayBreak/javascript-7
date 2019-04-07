@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>	
+	//作用域链
+            var x = 10;
+
+            function a(){
+                // var x = 15;//不会影响父级的变量
+				x=15;//没有定义x;改变的是外部的x的值
+                var y = 5;
+
+                //p = 80;
+                //alert( p );找一个没定义的变量就会报错
+                return x+y;//自己有就用自己的自己没有就往父级作用域里找(不找兄弟元素)
+            }
+
+            console.log(a());//会执行变a()
+
+            console.log(x);
+
+            //console.log( a() );
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

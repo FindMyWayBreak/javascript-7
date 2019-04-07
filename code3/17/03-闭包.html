@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+
+            <p>aaaaaaaaa</p>
+            <p>bbbbbbbbbbb</p>
+            <p>cccccccccccc</p>
+            <p>ddddddddddd</p>
+            <p>eeeeeeeeee</p>
+
+        </div>
+        
+        <script>
+            /*(function(){
+                var num = 10;
+                document.onclick = function(){
+                    num ++;
+                    alert( num );
+                };
+            })();*/ //典型闭包 因为不知道何时点击 所以也不知道num什么时候引用 所以不会回收 但避免全局名字冲突
+
+            let aP = document.getElementsByTagName("p");
+
+            /*for(let i=0;i<5;i++){
+                aP[i].onclick = function(){
+                    alert( ++i );
+                };
+            }*/ //for let有一个副作用域 但子集作用域引用了父级作用域的变量 但又不知道什么时候用 不会回收五个闭包存了五个不同的i 不同的父级作用与
+
+//             for(var i=0;i<5;i++){
+//                 (function(goudan){
+// 						aP[goudan].onclick = function(){
+// 							alert(goudan);
+// 						};//可以换成i但是i与循环i不同
+// 				})(i);
+//                 
+//             } //var没有作用域无法存下来 同一个父级 子作用域使用了 父作用域参数 星辰闭包 导致父用域会存值(父作用域内 不用的话 无法取到这个值因为没保存直接回收)
+
+					for(var i=0;i<5;i++){
+					 aP[i].index = i;
+					 console.log(aP[i].index)
+						aP[i].onclick = function(){
+							alert(this.index);
+						//可以换成i但是i与循环i不同
+				}
+                
+            }
+            /*(function(){
+                var x = 10;
+                alert(x);
+            })();*/
+
+//             for(var i=0;i<5;i++){
+//                 
+//                     aP[i].onclick = function(){
+//                         alert(i);
+//                     };
+//                 };
+           
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

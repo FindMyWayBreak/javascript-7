@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="潭州教育-阿飞老师">
+        <style>
+            body{font-family: "Microsoft YaHei",serif;}
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+        
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        
+        <script>
+
+            /*
+            闭包：父作作用域不会垃圾回收，可以被子作用域取到  一个使用了外部函数的参数或者变量的函数
+             变量的回收 内存 未使用 使用完全后 变量会被回收   全局变量不会回收但要避免全局变量
+			 */
+
+           function a(){
+                var x = 10;//x只产生了一次
+                function b(){
+                    x ++;//不会回收
+                    var y = 20
+                    y++;
+                    alert(x);
+                    alert(y);
+                }
+                return b;
+            }
+			a()();
+			a()();
+
+            var c = a();
+			 //a（）执行函数 返回值 控制到子函数 主函数职责没完
+
+            c(); 
+// 			c代表的function b(){在外面调用b函数需要相同的a函数
+//                     x ++;/不会回收
+//                     var y = 20
+//                     y++;
+//                     alert(x);
+//                     alert(y);a（）只执行了一次
+//                 }
+            c();//函数执行会产生作用域 执行四次会产生不同的y的作用域
+            
+
+//             a()();变量的内存回收在作用域内x使用完后没有相关的操作 两个不同的作用域
+//             a()();a()每次都要执行了 产生不同的作用域
+//             a()();
+//             a()();
+
+
+//             function a(){
+//                 var x = 10;
+// 
+//                 alert(x);
+//                 alert(x);
+//             }
+// 
+//             a();
+// 
+//             a();
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
